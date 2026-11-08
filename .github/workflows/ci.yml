@@ -1,0 +1,39 @@
+
+name: MedicalShop CI
+
+on:
+  push:
+    branches:
+      - development
+  pull_request:
+    branches:
+      - development
+
+jobs:
+  build:
+    name: Build MedicalShop
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      - name: Setup .NET 10 SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.x'
+
+      - name: Restore NuGet packages
+        run: dotnet restore MedicalShop.slnx
+
+      - name: Build solution
+        run: dotnet build MedicalShop.slnx --configuration Release --no-restore
+
+      - name: Publish Web Application
+        run: dotnet publish MedicalShop.Web/MedicalShop.Web.csproj --configuration Release --no-build --output ./publish
+
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: MedicalShop-Build
+          path: ./publish
