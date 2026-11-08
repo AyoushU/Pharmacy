@@ -21,6 +21,7 @@ namespace MedicalShop.Web.Controllers
 
         public async Task<IActionResult> Index()
         {
+            // new code
             var products = await _productService.GetAllAsync();
             return View(products);
         }
