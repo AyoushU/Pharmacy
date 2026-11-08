@@ -81,6 +81,7 @@ namespace MedicalShop.Web.Controllers
             }
         }
 
+        // load category in dropdown list option
         private async Task LoadCategoriesAsync(ProductCreateViewModel model)
         {
             var categories = await _categoryService.GetActiveAsync();
@@ -93,5 +94,6 @@ namespace MedicalShop.Web.Controllers
                 })
                 .ToList();
         }
+        //End load category in dropdown list option
     }
 }
