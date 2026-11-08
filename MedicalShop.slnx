@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="MedicalShop.Application/MedicalShop.Application.csproj" />
+  <Project Path="MedicalShop.Domain/MedicalShop.Domain.csproj" />
+  <Project Path="MedicalShop.Infrastructure/MedicalShop.Infrastructure.csproj" />
+  <Project Path="MedicalShop.Web/MedicalShop.Web.csproj" />
+</Solution>

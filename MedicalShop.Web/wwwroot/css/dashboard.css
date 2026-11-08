@@ -1,0 +1,265 @@
+﻿
+/* =========================================
+   PHARMACY ERP - DASHBOARD DESIGN
+========================================= */
+
+.dashboard-page {
+    padding: 25px !important;
+    background: #f4f7fc;
+    min-height: calc(100vh - 130px);
+    color: #172554;
+}
+
+/* Dashboard Header */
+.dashboard-header {
+    margin-bottom: 28px !important;
+}
+
+    .dashboard-header h3 {
+        font-size: 27px;
+        font-weight: 750;
+        color: #172554;
+        letter-spacing: -0.5px;
+    }
+
+    .dashboard-header p {
+        color: #718096 !important;
+        font-size: 14px;
+    }
+
+/* =========================================
+   SUMMARY CARDS
+========================================= */
+
+.dashboard-stat-card {
+    border: 1px solid #edf1f7 !important;
+    background: #ffffff;
+    overflow: hidden;
+    position: relative;
+
+    width: 100%;
+    min-height: 145px;
+    border-radius: 13px !important;
+    border: 1px solid #edf1f7 !important;
+    transition: all 0.25s ease;
+}
+
+    .dashboard-stat-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(30, 64, 175, 0.09) !important;
+    }
+
+    .dashboard-stat-card .card-body {
+        padding: 23px 20px;
+    }
+
+    .dashboard-stat-card p {
+        font-size: 14px;
+        font-weight: 500;
+        color: #64748b !important;
+        margin-bottom: 12px !important;
+    }
+
+    .dashboard-stat-card h3 {
+        font-size: 29px;
+        font-weight: 750;
+        margin-bottom: 8px;
+        color: #172554;
+    }
+
+    .dashboard-stat-card small {
+        font-size: 12px;
+        color: #94a3b8 !important;
+    }
+
+    /* Individual card accent colors */
+
+    .dashboard-stat-card:nth-child(1) {
+        border-top: 3px solid #2563eb !important;
+        background: linear-gradient(135deg, #ffffff, #f4f8ff);
+    }
+
+    .dashboard-stat-card:nth-child(2) {
+        border-top: 3px solid #10b981 !important;
+        background: linear-gradient(135deg, #ffffff, #f2fcf8);
+    }
+
+    .dashboard-stat-card:nth-child(3) {
+        border-top: 3px solid #f59e0b !important;
+        background: linear-gradient(135deg, #ffffff, #fffbf2);
+    }
+
+    .dashboard-stat-card:nth-child(4) {
+        border-top: 3px solid #f43f5e !important;
+        background: linear-gradient(135deg, #ffffff, #fff5f6);
+    }
+
+/* =========================================
+   QUICK ACTIONS
+========================================= */
+
+.dashboard-quick-actions {
+    border: 1px solid #edf1f7 !important;
+    border-radius: 13px !important;
+    background: #ffffff;
+}
+
+    .dashboard-quick-actions .card-body {
+        padding: 23px;
+    }
+
+    .dashboard-quick-actions h5 {
+        font-size: 19px;
+        font-weight: 700;
+        color: #172554;
+        margin-bottom: 20px !important;
+    }
+
+    .dashboard-quick-actions .btn {
+        min-height: 62px;
+        border-radius: 10px;
+        font-size: 15px;
+        font-weight: 600;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.25s ease;
+        background: #ffffff;
+    }
+
+        .dashboard-quick-actions .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 16px rgba(0, 0, 0, 0.08);
+        }
+
+    .dashboard-quick-actions .btn-outline-primary:hover {
+        background: #2563eb;
+    }
+
+    .dashboard-quick-actions .btn-outline-success:hover {
+        background: #059669;
+    }
+
+    .dashboard-quick-actions .btn-outline-info:hover {
+        background: #0891b2;
+        color: #ffffff;
+    }
+
+    .dashboard-quick-actions .btn-outline-warning:hover {
+        background: #d97706;
+        color: #ffffff;
+    }
+
+    .dashboard-quick-actions .btn i {
+        font-size: 18px;
+    }
+
+/* =========================================
+   RECENT SALES & STOCK ALERTS
+========================================= */
+
+.dashboard-panel {
+    border: 1px solid #edf1f7 !important;
+    border-radius: 13px !important;
+    background: #ffffff;
+    min-height: 160px;
+    transition: all 0.25s ease;
+}
+
+    .dashboard-panel:hover {
+        box-shadow: 0 8px 20px rgba(30, 64, 175, 0.07) !important;
+    }
+
+    .dashboard-panel .card-body {
+        padding: 23px;
+    }
+
+    .dashboard-panel h5 {
+        font-size: 18px;
+        font-weight: 700;
+        color: #172554;
+        margin-bottom: 18px !important;
+    }
+
+    .dashboard-panel p {
+        color: #94a3b8 !important;
+        font-size: 14px;
+    }
+
+/* =========================================
+   COMMON CARD DESIGN
+========================================= */
+
+.dashboard-page .card {
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.04) !important;
+}
+
+    .dashboard-page .card:hover {
+        border-color: #dce6f5 !important;
+    }
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 991px) {
+
+    .dashboard-page {
+        padding: 18px !important;
+    }
+
+    .dashboard-stat-card {
+        min-height: 135px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .dashboard-page {
+        padding: 12px !important;
+    }
+
+    .dashboard-header h3 {
+        font-size: 22px;
+    }
+
+    .dashboard-header {
+        align-items: flex-start !important;
+        gap: 10px;
+    }
+
+    .dashboard-stat-card .card-body {
+        padding: 18px;
+    }
+
+    .dashboard-stat-card h3 {
+        font-size: 25px;
+    }
+
+    .dashboard-quick-actions .card-body,
+    .dashboard-panel .card-body {
+        padding: 17px;
+    }
+
+    .dashboard-quick-actions .btn {
+        min-height: 52px;
+    }
+}
+body {
+    background: #e3f2fd !important;
+}
+
+.dashboard-page {
+    width: 100%;
+    max-width: 1600px;
+    margin: auto;
+    padding: 25px 30px !important;
+    background: #f4f7fc;
+}
+/* Summary Cards Layout */
+
+.dashboard-stats {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    width: 100%;
+}

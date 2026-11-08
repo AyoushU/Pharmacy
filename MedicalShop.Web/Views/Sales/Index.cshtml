@@ -1,0 +1,96 @@
+﻿@using MedicalShop.Domain.Entities
+@model List<Sale>
+
+@{
+    ViewData["Title"] = "Sales";
+}
+
+<div class="container-fluid mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h2>Sales & Billing</h2>
+            <p class="text-muted mb-0">View your sales and invoices.</p>
+        </div>
+
+        <a asp-controller="Sales"
+           asp-action="Create"
+           class="btn btn-primary">
+            + New Sale
+        </a>
+    </div>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show">
+            @TempData["Success"]
+            <button type="button" class="btn-close"
+                    data-bs-dismiss="alert"></button>
+        </div>
+    }
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show">
+            @TempData["Error"]
+            <button type="button" class="btn-close"
+                    data-bs-dismiss="alert"></button>
+        </div>
+    }
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Invoice Number</th>
+                            <th>Sale Date</th>
+                            <th>Customer</th>
+                            <th>Payment Method</th>
+                            <th>Net Amount</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null && Model.Any())
+                        {
+                            foreach (var sale in Model)
+                            {
+                                <tr>
+                                    <td>@sale.InvoiceNumber</td>
+                                    <td>@sale.SaleDate.ToString("dd-MMM-yyyy HH:mm")</td>
+                                    <td>
+                                        @(sale.Customer == null
+                                            ? "Walk-in Customer"
+                                            : sale.Customer.ToString())
+                                    </td>
+                                    <td>@sale.PaymentMethod</td>
+                                    <td>@sale.NetAmount.ToString("N2")</td>
+                                    <td>@sale.Status</td>
+                                    <td>
+                                        <a asp-controller="Sales"
+                                           asp-action="Details"
+                                           asp-route-id="@sale.SaleId"
+                                           class="btn btn-sm btn-outline-primary">
+                                            View Invoice
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="7"
+                                    class="text-center text-muted py-4">
+                                    No sales found.
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

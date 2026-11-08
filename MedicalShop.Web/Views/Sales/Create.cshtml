@@ -1,0 +1,308 @@
+﻿@using MedicalShop.Domain.Entities
+@using MedicalShop.Web.ViewModels.Sales
+@model CreateSaleViewModel
+
+@{
+    ViewData["Title"] = "New Sale";
+    var stocks = ViewBag.Stocks as List<Stock> ?? new List<Stock>();
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>New Sale / Billing</h2>
+        <a asp-action="Index" class="btn btn-outline-secondary">
+            Back to Sales
+        </a>
+    </div>
+
+    <form asp-action="Create" method="post">
+        @Html.AntiForgeryToken()
+
+        <div asp-validation-summary="ModelOnly"
+             class="text-danger mb-3"></div>
+
+        <div class="card shadow-sm mb-4">
+            <div class="card-header">Bill Details</div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Payment Method</label>
+                        <select asp-for="PaymentMethod" class="form-select">
+                            <option value="Cash">Cash</option>
+                            <option value="UPI">UPI</option>
+                            <option value="Card">Card</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="DiscountAmount"
+                               class="form-label">Bill Discount (₹)</label>
+                        <input asp-for="DiscountAmount"
+                               class="form-control"
+                               type="number" min="0" step="0.01" />
+                        <span asp-validation-for="DiscountAmount"
+                              class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card shadow-sm mb-4">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <span>Medicine Items</span>
+                <button type="button" id="addItem"
+                        class="btn btn-sm btn-primary">
+                    + Add Item
+                </button>
+            </div>
+
+            <div class="card-body">
+                <div id="itemsContainer"></div>
+
+                <template id="itemTemplate">
+                    <div class="row g-2 align-items-end sale-item border rounded p-3 mb-3">
+                        <div class="col-md-5">
+                            <label class="form-label">Medicine / Batch</label>
+                            <select class="form-select stock-select"
+                                    required>
+                                <option value="">Select batch</option>
+                                @foreach (var stock in stocks)
+                                {
+                                    <option value="@stock.StockId"
+                                            data-product-id="@stock.ProductId"
+                                            data-quantity="@stock.Quantity"
+                                            data-price="@stock.SellingPrice"
+                                            data-gst="@stock.Product.GSTPercentage">
+                                        @stock.Product.ProductName
+                                        | Batch: @(stock.BatchNumber ?? "-")
+                                        | Qty: @stock.Quantity
+                                        | Price: @stock.SellingPrice.ToString("N2")
+                                    </option>
+                                }
+                            </select>
+                            <input type="hidden" class="product-id" />
+                            <input type="hidden" class="stock-id" />
+                        </div>
+
+                        <div class="col-md-2">
+                            <label class="form-label">Quantity</label>
+                            <input type="number" class="form-control quantity"
+                                   min="1" value="1" required />
+                            <small class="text-muted available-qty"></small>
+                        </div>
+
+                        <div class="col-md-2">
+                            <label class="form-label">Unit Price (₹)</label>
+                            <input type="text" class="form-control unit-price"
+                                   readonly />
+                        </div>
+
+                        <div class="col-md-2">
+                            <label class="form-label">Item Discount (₹)</label>
+                            <input type="number" class="form-control item-discount"
+                                   min="0" step="0.01" value="0" required />
+                        </div>
+
+                        <div class="col-md-1">
+                            <button type="button"
+                                    class="btn btn-outline-danger remove-item">
+                                X
+                            </button>
+                        </div>
+                    </div>
+                </template>
+
+               
+                <div class="border rounded p-3 mt-3">
+                    <h5 class="mb-3">Bill Summary</h5>
+
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>Subtotal (before item discounts)</span>
+                        <strong>₹<span id="subtotal">0.00</span></strong>
+                    </div>
+
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>Item Discount</span>
+                        <strong>₹<span id="itemDiscountTotal">0.00</span></strong>
+                    </div>
+
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>GST</span>
+                        <strong>₹<span id="gstTotal">0.00</span></strong>
+                    </div>
+
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>Bill Discount</span>
+                        <strong>₹<span id="billDiscountDisplay">0.00</span></strong>
+                    </div>
+
+                    <hr />
+
+                    <div class="d-flex justify-content-between mb-3">
+                        <h4>Net Payable</h4>
+                        <h4>₹<span id="netAmount">0.00</span></h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Amount Received (₹)</label>
+                            <input type="number" id="amountReceived"
+                                   name="AmountReceived"
+                                   value="0"
+                                   class="form-control" min="0"
+                                   step="0.01" value="0" />
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Balance Due (₹)</label>
+                            <input type="text" id="balanceDue"
+                                   class="form-control" value="0.00" readonly />
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <span>Payment Status</span>
+                        <strong id="paymentStatus">Unpaid</strong>
+                    </div>
+
+                    <p class="text-muted small mt-3 mb-0">
+                        Preview only. Final price, GST and payment calculations
+                        will be validated on the server before saving.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="text-end mb-5">
+            <button type="submit" class="btn btn-success btn-lg">
+                Save Sale
+            </button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+    
+        (() => {
+            const container = document.getElementById('itemsContainer');
+            const template = document.getElementById('itemTemplate');
+            const addButton = document.getElementById('addItem');
+
+            const subtotalLabel = document.getElementById('subtotal');
+            const itemDiscountLabel = document.getElementById('itemDiscountTotal');
+            const gstLabel = document.getElementById('gstTotal');
+            const billDiscountInput = document.getElementById('DiscountAmount');
+            const billDiscountLabel = document.getElementById('billDiscountDisplay');
+            const netAmountLabel = document.getElementById('netAmount');
+            const amountReceivedInput = document.getElementById('amountReceived');
+            const balanceDueInput = document.getElementById('balanceDue');
+            const paymentStatusLabel = document.getElementById('paymentStatus');
+
+            function money(value) {
+                return Math.max(0, value).toFixed(2);
+            }
+
+            function reindexRows() {
+                container.querySelectorAll('.sale-item').forEach((row, index) => {
+                    row.querySelector('.product-id').name = `Items[${index}].ProductId`;
+                    row.querySelector('.stock-id').name = `Items[${index}].StockId`;
+                    row.querySelector('.quantity').name = `Items[${index}].Quantity`;
+                    row.querySelector('.item-discount').name = `Items[${index}].DiscountAmount`;
+                });
+            }
+
+            function updateSummary() {
+                let subtotal = 0;
+                let itemDiscountTotal = 0;
+                let gstTotal = 0;
+
+                container.querySelectorAll('.sale-item').forEach(row => {
+                    const option = row.querySelector('.stock-select').selectedOptions[0];
+
+                    if (!option || !option.value) return;
+
+                    const price = Number(option.dataset.price || 0);
+                    const gstRate = Number(option.dataset.gst || 0);
+                    const quantity = Math.max(0, Number(row.querySelector('.quantity').value || 0));
+                    const discount = Math.max(0, Number(row.querySelector('.item-discount').value || 0));
+
+                    const gross = price * quantity;
+                    const validDiscount = Math.min(discount, gross);
+                    const taxable = gross - validDiscount;
+
+                    subtotal += gross;
+                    itemDiscountTotal += validDiscount;
+                    gstTotal += Math.round((taxable * gstRate + Number.EPSILON)) / 100;
+                });
+
+                const requestedBillDiscount = Math.max(0, Number(billDiscountInput?.value || 0));
+                const beforeBillDiscount = subtotal - itemDiscountTotal + gstTotal;
+                const billDiscount = Math.min(requestedBillDiscount, beforeBillDiscount);
+                const netAmount = Math.max(0, beforeBillDiscount - billDiscount);
+
+                const received = Math.max(0, Number(amountReceivedInput.value || 0));
+                const balance = Math.max(0, netAmount - received);
+
+                subtotalLabel.textContent = money(subtotal);
+                itemDiscountLabel.textContent = money(itemDiscountTotal);
+                gstLabel.textContent = money(gstTotal);
+                billDiscountLabel.textContent = money(billDiscount);
+                netAmountLabel.textContent = money(netAmount);
+                balanceDueInput.value = money(balance);
+
+                if (received <= 0) {
+                    paymentStatusLabel.textContent = 'Unpaid';
+                } else if (received < netAmount) {
+                    paymentStatusLabel.textContent = 'Partially Paid';
+                } else {
+                    paymentStatusLabel.textContent = 'Paid';
+                }
+            }
+
+            function addItem() {
+                const fragment = template.content.cloneNode(true);
+                const row = fragment.querySelector('.sale-item');
+                const select = row.querySelector('.stock-select');
+
+                select.addEventListener('change', () => {
+                    const option = select.selectedOptions[0];
+
+                    row.querySelector('.product-id').value = option?.dataset.productId || '';
+                    row.querySelector('.stock-id').value = option?.value || '';
+                    row.querySelector('.unit-price').value = option?.dataset.price || '';
+
+                    const quantityInput = row.querySelector('.quantity');
+                    quantityInput.max = option?.dataset.quantity || '';
+                    quantityInput.value = '1';
+
+                    row.querySelector('.available-qty').textContent =
+                        option?.value ? `Available: ${option.dataset.quantity}` : '';
+
+                    updateSummary();
+                });
+
+                row.querySelector('.quantity').addEventListener('input', updateSummary);
+                row.querySelector('.item-discount').addEventListener('input', updateSummary);
+
+                row.querySelector('.remove-item').addEventListener('click', () => {
+                    row.remove();
+                    reindexRows();
+                    updateSummary();
+                });
+
+                container.appendChild(fragment);
+                reindexRows();
+            }
+
+            addButton.addEventListener('click', addItem);
+            billDiscountInput?.addEventListener('input', updateSummary);
+            amountReceivedInput.addEventListener('input', updateSummary);
+
+            addItem();
+        })();
+
+</script>
+}

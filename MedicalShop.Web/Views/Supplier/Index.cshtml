@@ -1,0 +1,71 @@
+﻿@model List<MedicalShop.Application.DTOs.Supplier.SupplierDto>
+
+@{
+    ViewData["Title"] = "Suppliers";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Suppliers</h2>
+
+    <a asp-action="Create" class="btn btn-primary">
+        Add Supplier
+    </a>
+</div>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["Success"]
+    </div>
+}
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Code</th>
+            <th>Supplier Name</th>
+            <th>Contact Person</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>GST Number</th>
+            <th>Opening Balance</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @if (Model.Any())
+        {
+            foreach (var supplier in Model)
+            {
+                <tr>
+                    <td>@supplier.SupplierCode</td>
+                    <td>@supplier.SupplierName</td>
+                    <td>@supplier.ContactPerson</td>
+                    <td>@supplier.Phone</td>
+                    <td>@supplier.Email</td>
+                    <td>@supplier.GSTNumber</td>
+                    <td>@supplier.OpeningBalance.ToString("N2")</td>
+                    <td>
+                        @if (supplier.IsActive)
+                        {
+                            <span class="badge bg-success">Active</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-secondary">Inactive</span>
+                        }
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="8" class="text-center">
+                    No suppliers found.
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

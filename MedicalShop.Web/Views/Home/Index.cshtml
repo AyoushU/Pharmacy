@@ -1,0 +1,131 @@
+﻿@model MedicalShop.Web.ViewModels.Dashboard.DashboardViewModel
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="container-fluid py-3 dashboard-page">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h3 class="fw-bold mb-1">Dashboard</h3>
+            <p class="text-muted mb-0">Welcome to Medical Shop ERP</p>
+        </div>
+        <span class="text-muted">@DateTime.Now.ToString("dd MMM yyyy")</span>
+    </div>
+
+    <!-- Summary Cards -->
+    <!-- Summary Cards -->
+    <div class="row g-3 mb-4 dashboard-stats">
+
+        <div class="col-12 col-sm-6 col-xl-3">
+            <div class="card border-0 shadow-sm dashboard-stat-card sales-card">
+                <div class="card-body">
+                    <p class="text-muted mb-2">Today's Sales</p>
+                    <h3 class="fw-bold text-success">
+                        @Model.TodaySales.ToString("C", new System.Globalization.CultureInfo("en-IN"))
+                    </h3>
+                    <small class="text-muted">Total sales today</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-xl-3">
+            <div class="card border-0 shadow-sm dashboard-stat-card products-card">
+                <div class="card-body">
+                    <p class="text-muted mb-2">Total Products</p>
+                    <h3 class="fw-bold">@Model.TotalProducts</h3>
+                    <small class="text-muted">Available products</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-xl-3">
+            <div class="card border-0 shadow-sm dashboard-stat-card stock-card">
+                <div class="card-body">
+                    <p class="text-muted mb-2">Low Stock</p>
+                    <h3 class="fw-bold text-warning">0</h3>
+                    <small class="text-muted">Products need restocking</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-xl-3">
+            <div class="card border-0 shadow-sm dashboard-stat-card expiry-card">
+                <div class="card-body">
+                    <p class="text-muted mb-2">Near Expiry</p>
+                    <h3 class="fw-bold text-danger">@Model.NearExpiryCount</h3>
+                    <small class="text-muted">Batches nearing expiry</small>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Quick Actions -->
+    <div class="card border-0 shadow-sm mb-4 dashboard-quick-actions">
+        <div class="card-body">
+            <h5 class="fw-bold mb-3">Quick Actions</h5>
+
+            <div class="row g-3">
+
+                <div class="col-md-3">
+                    <a asp-controller="Sales" asp-action="Create"
+                       class="btn btn-outline-primary w-100 py-3">
+                        <i class="bi bi-cart-plus me-2"></i> New Sale
+                    </a>
+                </div>
+
+                <div class="col-md-3">
+                    <a asp-controller="Purchase" asp-action="Create"
+                       class="btn btn-outline-success w-100 py-3">
+                        <i class="bi bi-bag-plus me-2"></i> New Purchase
+                    </a>
+                </div>
+
+                <div class="col-md-3">
+                    <a asp-controller="Product" asp-action="Index"
+                       class="btn btn-outline-info w-100 py-3">
+                        <i class="bi bi-box-seam me-2"></i> Products
+                    </a>
+                </div>
+
+                <div class="col-md-3">
+                    <a asp-controller="Inventory" asp-action="Index"
+                       class="btn btn-outline-warning w-100 py-3">
+                        <i class="bi bi-clipboard-data me-2"></i> Inventory
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard Sections -->
+    <div class="row g-3">
+
+        <div class="col-md-6">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body">
+                    <h5 class="fw-bold mb-3">Recent Sales</h5>
+                    <p class="text-muted mb-0">
+                        Recent sales transactions will appear here.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body">
+                    <h5 class="fw-bold mb-3">Stock Alerts</h5>
+                    <p class="text-muted mb-0">
+                        Low stock and expiry alerts will appear here.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
