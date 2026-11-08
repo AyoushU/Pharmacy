@@ -1,0 +1,106 @@
+trigger:
+  branches:
+    include:
+      - development
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  buildConfiguration: 'Release'
+
+stages:
+
+# -------------------------
+# STAGE 1: CI - BUILD
+# -------------------------
+- stage: Build
+  displayName: 'Build MedicalShop'
+  jobs:
+    - job: BuildApplication
+      displayName: 'Build and Publish'
+      steps:
+
+        - task: UseDotNet@2
+          displayName: 'Install .NET 10 SDK'
+          inputs:
+            packageType: 'sdk'
+            version: '10.x'
+
+        - script: dotnet restore MedicalShop.slnx
+          displayName: 'Restore Dependencies'
+
+        - script: dotnet build MedicalShop.slnx --configuration $(buildConfiguration) --no-restore
+          displayName: 'Build Solution'
+
+        - script: dotnet publish MedicalShop.Web/MedicalShop.Web.csproj --configuration $(buildConfiguration) --no-build --output $(Build.ArtifactStagingDirectory)/MedicalShop
+          displayName: 'Publish Web Application'
+
+        - task: PublishPipelineArtifact@1
+          displayName: 'Publish Build Artifact'
+          inputs:
+            targetPath: '$(Build.ArtifactStagingDirectory)/MedicalShop'
+            artifact: 'MedicalShop'
+
+# -------------------------
+# STAGE 2: DEVELOPMENT
+# -------------------------
+- stage: Development
+  displayName: 'Deploy to Development'
+  dependsOn: Build
+  jobs:
+    - deployment: DeployDevelopment
+      environment: 'MedicalShop-Development'
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+              - download: current
+                artifact: MedicalShop
+
+              - script: |
+                  echo "Development deployment simulation"
+                  ls "$(Pipeline.Workspace)/MedicalShop"
+                displayName: 'Verify Development Artifact'
+
+# -------------------------
+# STAGE 3: UAT
+# -------------------------
+- stage: UAT
+  displayName: 'Deploy to UAT'
+  dependsOn: Development
+  jobs:
+    - deployment: DeployUAT
+      environment: 'MedicalShop-UAT'
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+              - download: current
+                artifact: MedicalShop
+
+              - script: |
+                  echo "UAT deployment simulation"
+                  ls "$(Pipeline.Workspace)/MedicalShop"
+                displayName: 'Verify UAT Artifact'
+
+# -------------------------
+# STAGE 4: PRODUCTION
+# -------------------------
+- stage: Production
+  displayName: 'Deploy to Production'
+  dependsOn: UAT
+  jobs:
+    - deployment: DeployProduction
+      environment: 'MedicalShop-Production'
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+              - download: current
+                artifact: MedicalShop
+
+              - script: |
+                  echo "Production deployment simulation"
+                  ls "$(Pipeline.Workspace)/MedicalShop"
+                displayName: 'Verify Production Artifact'
