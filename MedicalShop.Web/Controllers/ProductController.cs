@@ -29,6 +29,7 @@ namespace MedicalShop.Web.Controllers
         [HttpGet]
         public async Task<IActionResult> Create()
         {
+            // new comment added for create in product controller
             var model = new ProductCreateViewModel();
 
             await LoadCategoriesAsync(model);
