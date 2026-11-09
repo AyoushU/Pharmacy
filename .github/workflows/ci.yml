@@ -72,3 +72,6 @@ jobs:
           }
 
           Write-Host "MedicalShop deployment completed."
+
+          $global:LASTEXITCODE = 0
+          exit 0

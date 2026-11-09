@@ -1,0 +1,12 @@
+﻿{
+  "repositoryName": "AyoushU/Pharmacy",
+  "pipelineDirectory": "Pharmacy",
+  "workspaceDirectory": "Pharmacy\\Pharmacy",
+  "repositories": {
+    "AyoushU/Pharmacy": {
+      "repositoryPath": "Pharmacy\\Pharmacy",
+      "lastRunOn": "11/08/2026 16:34:02 +05:30"
+    }
+  },
+  "lastRunOn": "11/08/2026 16:56:44 +05:30"
+}
