@@ -8,3 +8,4 @@ dist/
 *.suo
 appsettings.json
 appsettings.*.json
+actions-runner/

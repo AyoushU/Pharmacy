@@ -1,0 +1,412 @@
+[2026-11-09 06:46:49Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2026-11-09 06:46:49Z INFO HostContext] Well known directory 'Bin': 'C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\bin'
+[2026-11-09 06:46:49Z INFO HostContext] Well known directory 'Root': 'C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2'
+[2026-11-09 06:46:49Z INFO HostContext] Well known config file 'Credentials': 'C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\.credentials'
+[2026-11-09 06:46:49Z INFO HostContext] Well known directory 'Bin': 'C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\bin'
+[2026-11-09 06:46:49Z INFO HostContext] Well known directory 'Root': 'C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2'
+[2026-11-09 06:46:49Z INFO HostContext] Well known config file 'Runner': 'C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\.runner'
+[2026-11-09 06:46:49Z INFO Listener] Runner is built for Windows (X64) - win-x64.
+[2026-11-09 06:46:49Z INFO Listener] RuntimeInformation: Microsoft Windows 10.0.26200.
+[2026-11-09 06:46:49Z INFO Listener] Version: 2.338.2
+[2026-11-09 06:46:49Z INFO Listener] Commit: d1eb12d4b115c301201de27d667284e1a80f2ab5
+[2026-11-09 06:46:49Z INFO Listener] Culture: en-IN
+[2026-11-09 06:46:49Z INFO Listener] UI Culture: en-US
+[2026-11-09 06:46:49Z INFO HostContext] Well known directory 'Bin': 'C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\bin'
+[2026-11-09 06:46:49Z INFO HostContext] Well known directory 'Root': 'C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2'
+[2026-11-09 06:46:49Z INFO Listener] Validating directory permissions for: 'C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2'
+[2026-11-09 06:46:49Z INFO CommandLineParser] Parse
+[2026-11-09 06:46:49Z INFO CommandLineParser] Parsing 1 args
+[2026-11-09 06:46:49Z INFO CommandLineParser] parsing argument
+[2026-11-09 06:46:49Z INFO CommandLineParser] HasArgs: False
+[2026-11-09 06:46:49Z INFO CommandLineParser] Adding Command: run
+[2026-11-09 06:46:49Z INFO Listener] Arguments parsed
+[2026-11-09 06:46:49Z INFO Runner] ExecuteCommand
+[2026-11-09 06:46:49Z INFO ConfigurationStore] currentAssemblyLocation: C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\bin\Runner.Listener.dll
+[2026-11-09 06:46:49Z INFO HostContext] Well known directory 'Bin': 'C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\bin'
+[2026-11-09 06:46:49Z INFO ConfigurationStore] binPath: C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\bin
+[2026-11-09 06:46:49Z INFO HostContext] Well known directory 'Bin': 'C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\bin'
+[2026-11-09 06:46:49Z INFO HostContext] Well known directory 'Root': 'C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2'
+[2026-11-09 06:46:49Z INFO ConfigurationStore] RootFolder: C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2
+[2026-11-09 06:46:49Z INFO HostContext] Well known directory 'Bin': 'C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\bin'
+[2026-11-09 06:46:49Z INFO HostContext] Well known directory 'Root': 'C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2'
+[2026-11-09 06:46:49Z INFO HostContext] Well known config file 'Runner': 'C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\.runner'
+[2026-11-09 06:46:49Z INFO ConfigurationStore] ConfigFilePath: C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\.runner
+[2026-11-09 06:46:49Z INFO HostContext] Well known directory 'Bin': 'C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\bin'
+[2026-11-09 06:46:49Z INFO HostContext] Well known directory 'Root': 'C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2'
+[2026-11-09 06:46:49Z INFO HostContext] Well known config file 'MigratedRunner': 'C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\.runner_migrated'
+[2026-11-09 06:46:49Z INFO ConfigurationStore] MigratedConfigFilePath: C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\.runner_migrated
+[2026-11-09 06:46:49Z INFO HostContext] Well known directory 'Bin': 'C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\bin'
+[2026-11-09 06:46:49Z INFO HostContext] Well known directory 'Root': 'C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2'
+[2026-11-09 06:46:49Z INFO HostContext] Well known config file 'Credentials': 'C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\.credentials'
+[2026-11-09 06:46:49Z INFO ConfigurationStore] CredFilePath: C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\.credentials
+[2026-11-09 06:46:49Z INFO HostContext] Well known directory 'Bin': 'C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\bin'
+[2026-11-09 06:46:49Z INFO HostContext] Well known directory 'Root': 'C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2'
+[2026-11-09 06:46:49Z INFO HostContext] Well known config file 'MigratedCredentials': 'C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\.credentials_migrated'
+[2026-11-09 06:46:49Z INFO ConfigurationStore] MigratedCredFilePath: C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\.credentials_migrated
+[2026-11-09 06:46:49Z INFO HostContext] Well known directory 'Bin': 'C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\bin'
+[2026-11-09 06:46:49Z INFO HostContext] Well known directory 'Root': 'C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2'
+[2026-11-09 06:46:49Z INFO HostContext] Well known config file 'Service': 'C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\.service'
+[2026-11-09 06:46:49Z INFO ConfigurationStore] ServiceConfigFilePath: C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\.service
+[2026-11-09 06:46:49Z INFO CommandSettings] Flag 'help': 'False'
+[2026-11-09 06:46:49Z INFO CommandSettings] Flag 'version': 'False'
+[2026-11-09 06:46:49Z INFO CommandSettings] Flag 'commit': 'False'
+[2026-11-09 06:46:49Z INFO CommandSettings] Flag 'check': 'False'
+[2026-11-09 06:46:49Z INFO CommandSettings] Command 'configure': 'False'
+[2026-11-09 06:46:49Z INFO CommandSettings] Command 'remove': 'False'
+[2026-11-09 06:46:49Z INFO CommandSettings] Command 'warmup': 'False'
+[2026-11-09 06:46:49Z INFO ConfigurationManager] LoadSettings
+[2026-11-09 06:46:49Z INFO ConfigurationStore] IsConfigured()
+[2026-11-09 06:46:49Z INFO ConfigurationStore] IsConfigured: True
+[2026-11-09 06:46:49Z INFO ConfigurationManager] Is configured: True
+[2026-11-09 06:46:49Z INFO ConfigurationStore] Read setting file: 394 chars
+[2026-11-09 06:46:49Z INFO ConfigurationManager] Settings Loaded
+[2026-11-09 06:46:49Z INFO ConfigurationStore] IsServiceConfigured()
+[2026-11-09 06:46:49Z INFO ConfigurationStore] IsServiceConfigured: False
+[2026-11-09 06:46:49Z INFO CommandSettings] Command 'run': 'True'
+[2026-11-09 06:46:49Z INFO ConfigurationStore] IsConfigured()
+[2026-11-09 06:46:49Z INFO ConfigurationStore] IsConfigured: True
+[2026-11-09 06:46:49Z INFO ConfigurationManager] Is configured: True
+[2026-11-09 06:46:49Z INFO Runner] Could not parse the argument value '' for StartupType. Defaulting to Manual
+[2026-11-09 06:46:49Z INFO Runner] Set runner startup type - Manual
+[2026-11-09 06:46:49Z INFO CommandSettings] Flag 'once': 'False'
+[2026-11-09 06:46:49Z INFO CommandSettings] Flag 'once': 'False'
+[2026-11-09 06:46:49Z INFO Runner] RunAsync
+[2026-11-09 06:46:49Z INFO HostContext] Well known directory 'Bin': 'C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\bin'
+[2026-11-09 06:46:49Z INFO HostContext] Well known directory 'Root': 'C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2'
+[2026-11-09 06:46:49Z INFO HostContext] Well known directory 'Work': 'C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\_work'
+[2026-11-09 06:46:49Z INFO Runner] Validating directory permissions for: 'C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\_work'
+[2026-11-09 06:46:49Z INFO ConfigurationManager] LoadMigratedSettings
+[2026-11-09 06:46:49Z INFO ConfigurationStore] IsMigratedConfigured()
+[2026-11-09 06:46:49Z INFO ConfigurationStore] IsMigratedConfigured: False
+[2026-11-09 06:46:49Z INFO Runner] Failed to load migrated settings: No migrated configuration found.
+[2026-11-09 06:46:49Z INFO Runner] Falling back to original .runner settings
+[2026-11-09 06:46:49Z INFO Runner] Using BrokerMessageListener
+[2026-11-09 06:46:49Z INFO BrokerMessageListener] Using provided settings
+[2026-11-09 06:46:49Z INFO BrokerMessageListener] {
+  "AgentId": 2,
+  "AgentName": "DESKTOP-OJEL13D",
+  "PoolId": 1,
+  "PoolName": "Default",
+  "ServerUrl": "https://pipelinesghubeus5.actions.githubusercontent.com/0ElZqrs25jpN6D5pmVf1rnIVr6iiuHM7CMrnc51XF1VnSnVbJJ/",
+  "GitHubUrl": "https://github.com/AyoushU/Pharmacy",
+  "WorkFolder": "_work",
+  "UseV2Flow": true,
+  "ServerUrlV2": "https://broker.actions.githubusercontent.com/"
+}
+[2026-11-09 06:46:49Z INFO BrokerMessageListener] Loading Credentials
+[2026-11-09 06:46:49Z INFO ConfigurationStore] HasCredentials()
+[2026-11-09 06:46:49Z INFO ConfigurationStore] stored True
+[2026-11-09 06:46:49Z INFO CredentialManager] GetCredentialProvider
+[2026-11-09 06:46:49Z INFO CredentialManager] Creating type OAuth
+[2026-11-09 06:46:49Z INFO CredentialManager] Creating credential type: OAuth
+[2026-11-09 06:46:49Z INFO HostContext] Well known directory 'Bin': 'C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\bin'
+[2026-11-09 06:46:49Z INFO HostContext] Well known directory 'Root': 'C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2'
+[2026-11-09 06:46:49Z INFO HostContext] Well known config file 'RSACredentials': 'C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\.credentials_rsaparams'
+[2026-11-09 06:46:49Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\.credentials_rsaparams
+[2026-11-09 06:46:49Z INFO BrokerMessageListener] Attempt to create session.
+[2026-11-09 06:46:49Z INFO BrokerMessageListener] Connecting to the Broker Server...
+[2026-11-09 06:46:49Z INFO ConfigurationStore] HasCredentials()
+[2026-11-09 06:46:49Z INFO ConfigurationStore] stored True
+[2026-11-09 06:46:49Z INFO CredentialManager] GetCredentialProvider
+[2026-11-09 06:46:49Z INFO CredentialManager] Creating type OAuth
+[2026-11-09 06:46:49Z INFO CredentialManager] Creating credential type: OAuth
+[2026-11-09 06:46:49Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\.credentials_rsaparams
+[2026-11-09 06:46:49Z INFO BrokerMessageListener] VssConnection created
+[2026-11-09 06:46:49Z INFO BrokerMessageListener] Connecting to the Runner server...
+[2026-11-09 06:46:49Z INFO RunnerServer] EstablishVssConnection
+[2026-11-09 06:46:49Z INFO RunnerServer] Establish connection with 100 seconds timeout.
+[2026-11-09 06:46:49Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-11-09 06:46:49Z INFO RunnerServer] EstablishVssConnection
+[2026-11-09 06:46:49Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-11-09 06:46:49Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-11-09 06:46:49Z INFO RunnerServer] EstablishVssConnection
+[2026-11-09 06:46:49Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-11-09 06:46:49Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-11-09 06:46:51Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-11-09 06:46:51Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-11-09 06:46:51Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-11-09 06:46:51Z INFO BrokerMessageListener] VssConnection created
+[2026-11-09 06:46:51Z INFO Terminal] WRITE LINE: 
+[2026-11-09 06:46:51Z INFO Terminal] WRITE LINE: 
+[2026-11-09 06:46:51Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\.credentials_rsaparams
+[2026-11-09 06:46:51Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\.credentials_rsaparams
+[2026-11-09 06:46:53Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2026-11-09 06:46:54Z ERR  GitHubActionsService] POST request to https://broker.actions.githubusercontent.com/session failed. HTTP Status: Conflict
+[2026-11-09 06:46:54Z ERR  BrokerMessageListener] Catch exception during create session.
+[2026-11-09 06:46:54Z ERR  BrokerMessageListener] GitHub.DistributedTask.WebApi.TaskAgentSessionConflictException: Error: Conflict
+   at GitHub.Actions.RunService.WebApi.BrokerHttpClient.CreateSessionAsync(TaskAgentSession session, CancellationToken cancellationToken)
+   at GitHub.Runner.Common.BrokerServer.CreateSessionAsync(TaskAgentSession session, CancellationToken cancellationToken)
+   at GitHub.Runner.Listener.BrokerMessageListener.CreateSessionAsync(CancellationToken token)
+[2026-11-09 06:46:54Z INFO BrokerMessageListener] The session for this runner already exists.
+[2026-11-09 06:46:54Z ERR  Terminal] WRITE ERROR: A session for this runner already exists.
+[2026-11-09 06:46:54Z INFO BrokerMessageListener] The session conflict exception haven't reached retry limit.
+[2026-11-09 06:46:54Z ERR  Terminal] WRITE ERROR: 2026-11-09 06:46:54Z: Runner connect error: Error: Conflict. Retrying until reconnected.
+[2026-11-09 06:46:54Z INFO BrokerMessageListener] Sleeping for 30 seconds before retrying.
+[2026-11-09 06:47:24Z INFO BrokerMessageListener] Attempt to create session.
+[2026-11-09 06:47:24Z INFO BrokerMessageListener] Connecting to the Broker Server...
+[2026-11-09 06:47:24Z INFO ConfigurationStore] HasCredentials()
+[2026-11-09 06:47:24Z INFO ConfigurationStore] stored True
+[2026-11-09 06:47:24Z INFO CredentialManager] GetCredentialProvider
+[2026-11-09 06:47:24Z INFO CredentialManager] Creating type OAuth
+[2026-11-09 06:47:24Z INFO CredentialManager] Creating credential type: OAuth
+[2026-11-09 06:47:24Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\.credentials_rsaparams
+[2026-11-09 06:47:24Z INFO BrokerMessageListener] VssConnection created
+[2026-11-09 06:47:24Z INFO BrokerMessageListener] Connecting to the Runner server...
+[2026-11-09 06:47:24Z INFO RunnerServer] EstablishVssConnection
+[2026-11-09 06:47:24Z INFO RunnerServer] Establish connection with 100 seconds timeout.
+[2026-11-09 06:47:24Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-11-09 06:47:24Z INFO RunnerServer] EstablishVssConnection
+[2026-11-09 06:47:24Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-11-09 06:47:24Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-11-09 06:47:24Z INFO RunnerServer] EstablishVssConnection
+[2026-11-09 06:47:24Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-11-09 06:47:24Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-11-09 06:47:25Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-11-09 06:47:25Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-11-09 06:47:26Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-11-09 06:47:26Z INFO BrokerMessageListener] VssConnection created
+[2026-11-09 06:47:26Z INFO Terminal] WRITE LINE: 
+[2026-11-09 06:47:26Z INFO Terminal] WRITE LINE: 
+[2026-11-09 06:47:26Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\.credentials_rsaparams
+[2026-11-09 06:47:26Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\.credentials_rsaparams
+[2026-11-09 06:47:27Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2026-11-09 06:47:28Z ERR  GitHubActionsService] POST request to https://broker.actions.githubusercontent.com/session failed. HTTP Status: Conflict
+[2026-11-09 06:47:28Z ERR  BrokerMessageListener] Catch exception during create session.
+[2026-11-09 06:47:28Z ERR  BrokerMessageListener] GitHub.DistributedTask.WebApi.TaskAgentSessionConflictException: Error: Conflict
+   at GitHub.Actions.RunService.WebApi.BrokerHttpClient.CreateSessionAsync(TaskAgentSession session, CancellationToken cancellationToken)
+   at GitHub.Runner.Common.BrokerServer.CreateSessionAsync(TaskAgentSession session, CancellationToken cancellationToken)
+   at GitHub.Runner.Listener.BrokerMessageListener.CreateSessionAsync(CancellationToken token)
+[2026-11-09 06:47:28Z INFO BrokerMessageListener] The session for this runner already exists.
+[2026-11-09 06:47:28Z ERR  Terminal] WRITE ERROR: A session for this runner already exists.
+[2026-11-09 06:47:28Z INFO BrokerMessageListener] The session conflict exception haven't reached retry limit.
+[2026-11-09 06:47:28Z INFO BrokerMessageListener] Sleeping for 30 seconds before retrying.
+[2026-11-09 06:47:58Z INFO BrokerMessageListener] Attempt to create session.
+[2026-11-09 06:47:58Z INFO BrokerMessageListener] Connecting to the Broker Server...
+[2026-11-09 06:47:58Z INFO ConfigurationStore] HasCredentials()
+[2026-11-09 06:47:58Z INFO ConfigurationStore] stored True
+[2026-11-09 06:47:58Z INFO CredentialManager] GetCredentialProvider
+[2026-11-09 06:47:58Z INFO CredentialManager] Creating type OAuth
+[2026-11-09 06:47:58Z INFO CredentialManager] Creating credential type: OAuth
+[2026-11-09 06:47:58Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\.credentials_rsaparams
+[2026-11-09 06:47:58Z INFO BrokerMessageListener] VssConnection created
+[2026-11-09 06:47:58Z INFO BrokerMessageListener] Connecting to the Runner server...
+[2026-11-09 06:47:58Z INFO RunnerServer] EstablishVssConnection
+[2026-11-09 06:47:58Z INFO RunnerServer] Establish connection with 100 seconds timeout.
+[2026-11-09 06:47:59Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-11-09 06:47:59Z INFO RunnerServer] EstablishVssConnection
+[2026-11-09 06:47:59Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-11-09 06:47:59Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-11-09 06:47:59Z INFO RunnerServer] EstablishVssConnection
+[2026-11-09 06:47:59Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-11-09 06:47:59Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-11-09 06:48:00Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-11-09 06:48:00Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-11-09 06:48:00Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-11-09 06:48:00Z INFO BrokerMessageListener] VssConnection created
+[2026-11-09 06:48:00Z INFO Terminal] WRITE LINE: 
+[2026-11-09 06:48:00Z INFO Terminal] WRITE LINE: 
+[2026-11-09 06:48:00Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\.credentials_rsaparams
+[2026-11-09 06:48:00Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\.credentials_rsaparams
+[2026-11-09 06:48:01Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2026-11-09 06:48:02Z ERR  GitHubActionsService] POST request to https://broker.actions.githubusercontent.com/session failed. HTTP Status: Conflict
+[2026-11-09 06:48:02Z ERR  BrokerMessageListener] Catch exception during create session.
+[2026-11-09 06:48:02Z ERR  BrokerMessageListener] GitHub.DistributedTask.WebApi.TaskAgentSessionConflictException: Error: Conflict
+   at GitHub.Actions.RunService.WebApi.BrokerHttpClient.CreateSessionAsync(TaskAgentSession session, CancellationToken cancellationToken)
+   at GitHub.Runner.Common.BrokerServer.CreateSessionAsync(TaskAgentSession session, CancellationToken cancellationToken)
+   at GitHub.Runner.Listener.BrokerMessageListener.CreateSessionAsync(CancellationToken token)
+[2026-11-09 06:48:02Z INFO BrokerMessageListener] The session for this runner already exists.
+[2026-11-09 06:48:02Z ERR  Terminal] WRITE ERROR: A session for this runner already exists.
+[2026-11-09 06:48:02Z INFO BrokerMessageListener] The session conflict exception haven't reached retry limit.
+[2026-11-09 06:48:02Z INFO BrokerMessageListener] Sleeping for 30 seconds before retrying.
+[2026-11-09 06:48:32Z INFO BrokerMessageListener] Attempt to create session.
+[2026-11-09 06:48:32Z INFO BrokerMessageListener] Connecting to the Broker Server...
+[2026-11-09 06:48:32Z INFO ConfigurationStore] HasCredentials()
+[2026-11-09 06:48:32Z INFO ConfigurationStore] stored True
+[2026-11-09 06:48:32Z INFO CredentialManager] GetCredentialProvider
+[2026-11-09 06:48:32Z INFO CredentialManager] Creating type OAuth
+[2026-11-09 06:48:32Z INFO CredentialManager] Creating credential type: OAuth
+[2026-11-09 06:48:32Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\.credentials_rsaparams
+[2026-11-09 06:48:32Z INFO BrokerMessageListener] VssConnection created
+[2026-11-09 06:48:32Z INFO BrokerMessageListener] Connecting to the Runner server...
+[2026-11-09 06:48:32Z INFO RunnerServer] EstablishVssConnection
+[2026-11-09 06:48:32Z INFO RunnerServer] Establish connection with 100 seconds timeout.
+[2026-11-09 06:48:32Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-11-09 06:48:32Z INFO RunnerServer] EstablishVssConnection
+[2026-11-09 06:48:32Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-11-09 06:48:32Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-11-09 06:48:32Z INFO RunnerServer] EstablishVssConnection
+[2026-11-09 06:48:32Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-11-09 06:48:32Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-11-09 06:48:33Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-11-09 06:48:34Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-11-09 06:48:34Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-11-09 06:48:34Z INFO BrokerMessageListener] VssConnection created
+[2026-11-09 06:48:34Z INFO Terminal] WRITE LINE: 
+[2026-11-09 06:48:34Z INFO Terminal] WRITE LINE: 
+[2026-11-09 06:48:34Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\.credentials_rsaparams
+[2026-11-09 06:48:34Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\.credentials_rsaparams
+[2026-11-09 06:48:35Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2026-11-09 06:48:37Z ERR  GitHubActionsService] POST request to https://broker.actions.githubusercontent.com/session failed. HTTP Status: Conflict
+[2026-11-09 06:48:37Z ERR  BrokerMessageListener] Catch exception during create session.
+[2026-11-09 06:48:37Z ERR  BrokerMessageListener] GitHub.DistributedTask.WebApi.TaskAgentSessionConflictException: Error: Conflict
+   at GitHub.Actions.RunService.WebApi.BrokerHttpClient.CreateSessionAsync(TaskAgentSession session, CancellationToken cancellationToken)
+   at GitHub.Runner.Common.BrokerServer.CreateSessionAsync(TaskAgentSession session, CancellationToken cancellationToken)
+   at GitHub.Runner.Listener.BrokerMessageListener.CreateSessionAsync(CancellationToken token)
+[2026-11-09 06:48:37Z INFO BrokerMessageListener] The session for this runner already exists.
+[2026-11-09 06:48:37Z ERR  Terminal] WRITE ERROR: A session for this runner already exists.
+[2026-11-09 06:48:37Z INFO BrokerMessageListener] The session conflict exception haven't reached retry limit.
+[2026-11-09 06:48:37Z INFO BrokerMessageListener] Sleeping for 30 seconds before retrying.
+[2026-11-09 06:49:07Z INFO BrokerMessageListener] Attempt to create session.
+[2026-11-09 06:49:07Z INFO BrokerMessageListener] Connecting to the Broker Server...
+[2026-11-09 06:49:07Z INFO ConfigurationStore] HasCredentials()
+[2026-11-09 06:49:07Z INFO ConfigurationStore] stored True
+[2026-11-09 06:49:07Z INFO CredentialManager] GetCredentialProvider
+[2026-11-09 06:49:07Z INFO CredentialManager] Creating type OAuth
+[2026-11-09 06:49:07Z INFO CredentialManager] Creating credential type: OAuth
+[2026-11-09 06:49:07Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\.credentials_rsaparams
+[2026-11-09 06:49:07Z INFO BrokerMessageListener] VssConnection created
+[2026-11-09 06:49:07Z INFO BrokerMessageListener] Connecting to the Runner server...
+[2026-11-09 06:49:07Z INFO RunnerServer] EstablishVssConnection
+[2026-11-09 06:49:07Z INFO RunnerServer] Establish connection with 100 seconds timeout.
+[2026-11-09 06:49:07Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-11-09 06:49:07Z INFO RunnerServer] EstablishVssConnection
+[2026-11-09 06:49:07Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-11-09 06:49:07Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-11-09 06:49:07Z INFO RunnerServer] EstablishVssConnection
+[2026-11-09 06:49:07Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-11-09 06:49:07Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-11-09 06:49:08Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-11-09 06:49:08Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-11-09 06:49:08Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-11-09 06:49:09Z INFO BrokerMessageListener] VssConnection created
+[2026-11-09 06:49:09Z INFO Terminal] WRITE LINE: 
+[2026-11-09 06:49:09Z INFO Terminal] WRITE LINE: 
+[2026-11-09 06:49:09Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\.credentials_rsaparams
+[2026-11-09 06:49:09Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\.credentials_rsaparams
+[2026-11-09 06:49:10Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2026-11-09 06:49:11Z ERR  GitHubActionsService] POST request to https://broker.actions.githubusercontent.com/session failed. HTTP Status: Conflict
+[2026-11-09 06:49:11Z ERR  BrokerMessageListener] Catch exception during create session.
+[2026-11-09 06:49:11Z ERR  BrokerMessageListener] GitHub.DistributedTask.WebApi.TaskAgentSessionConflictException: Error: Conflict
+   at GitHub.Actions.RunService.WebApi.BrokerHttpClient.CreateSessionAsync(TaskAgentSession session, CancellationToken cancellationToken)
+   at GitHub.Runner.Common.BrokerServer.CreateSessionAsync(TaskAgentSession session, CancellationToken cancellationToken)
+   at GitHub.Runner.Listener.BrokerMessageListener.CreateSessionAsync(CancellationToken token)
+[2026-11-09 06:49:11Z INFO BrokerMessageListener] The session for this runner already exists.
+[2026-11-09 06:49:11Z ERR  Terminal] WRITE ERROR: A session for this runner already exists.
+[2026-11-09 06:49:11Z INFO BrokerMessageListener] The session conflict exception haven't reached retry limit.
+[2026-11-09 06:49:11Z INFO BrokerMessageListener] Sleeping for 30 seconds before retrying.
+[2026-11-09 06:49:41Z INFO BrokerMessageListener] Attempt to create session.
+[2026-11-09 06:49:41Z INFO BrokerMessageListener] Connecting to the Broker Server...
+[2026-11-09 06:49:41Z INFO ConfigurationStore] HasCredentials()
+[2026-11-09 06:49:41Z INFO ConfigurationStore] stored True
+[2026-11-09 06:49:41Z INFO CredentialManager] GetCredentialProvider
+[2026-11-09 06:49:41Z INFO CredentialManager] Creating type OAuth
+[2026-11-09 06:49:41Z INFO CredentialManager] Creating credential type: OAuth
+[2026-11-09 06:49:41Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\.credentials_rsaparams
+[2026-11-09 06:49:41Z INFO BrokerMessageListener] VssConnection created
+[2026-11-09 06:49:41Z INFO BrokerMessageListener] Connecting to the Runner server...
+[2026-11-09 06:49:41Z INFO RunnerServer] EstablishVssConnection
+[2026-11-09 06:49:41Z INFO RunnerServer] Establish connection with 100 seconds timeout.
+[2026-11-09 06:49:41Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-11-09 06:49:41Z INFO RunnerServer] EstablishVssConnection
+[2026-11-09 06:49:41Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-11-09 06:49:41Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-11-09 06:49:41Z INFO RunnerServer] EstablishVssConnection
+[2026-11-09 06:49:41Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-11-09 06:49:41Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-11-09 06:49:42Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-11-09 06:49:43Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-11-09 06:49:43Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-11-09 06:49:43Z INFO BrokerMessageListener] VssConnection created
+[2026-11-09 06:49:43Z INFO Terminal] WRITE LINE: 
+[2026-11-09 06:49:43Z INFO Terminal] WRITE LINE: 
+[2026-11-09 06:49:43Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\.credentials_rsaparams
+[2026-11-09 06:49:43Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\.credentials_rsaparams
+[2026-11-09 06:49:45Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2026-11-09 06:49:46Z ERR  GitHubActionsService] POST request to https://broker.actions.githubusercontent.com/session failed. HTTP Status: Conflict
+[2026-11-09 06:49:46Z ERR  BrokerMessageListener] Catch exception during create session.
+[2026-11-09 06:49:46Z ERR  BrokerMessageListener] GitHub.DistributedTask.WebApi.TaskAgentSessionConflictException: Error: Conflict
+   at GitHub.Actions.RunService.WebApi.BrokerHttpClient.CreateSessionAsync(TaskAgentSession session, CancellationToken cancellationToken)
+   at GitHub.Runner.Common.BrokerServer.CreateSessionAsync(TaskAgentSession session, CancellationToken cancellationToken)
+   at GitHub.Runner.Listener.BrokerMessageListener.CreateSessionAsync(CancellationToken token)
+[2026-11-09 06:49:46Z INFO BrokerMessageListener] The session for this runner already exists.
+[2026-11-09 06:49:46Z ERR  Terminal] WRITE ERROR: A session for this runner already exists.
+[2026-11-09 06:49:46Z INFO BrokerMessageListener] The session conflict exception haven't reached retry limit.
+[2026-11-09 06:49:46Z INFO BrokerMessageListener] Sleeping for 30 seconds before retrying.
+[2026-11-09 06:50:16Z INFO BrokerMessageListener] Attempt to create session.
+[2026-11-09 06:50:16Z INFO BrokerMessageListener] Connecting to the Broker Server...
+[2026-11-09 06:50:16Z INFO ConfigurationStore] HasCredentials()
+[2026-11-09 06:50:16Z INFO ConfigurationStore] stored True
+[2026-11-09 06:50:16Z INFO CredentialManager] GetCredentialProvider
+[2026-11-09 06:50:16Z INFO CredentialManager] Creating type OAuth
+[2026-11-09 06:50:16Z INFO CredentialManager] Creating credential type: OAuth
+[2026-11-09 06:50:16Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\.credentials_rsaparams
+[2026-11-09 06:50:16Z INFO BrokerMessageListener] VssConnection created
+[2026-11-09 06:50:16Z INFO BrokerMessageListener] Connecting to the Runner server...
+[2026-11-09 06:50:16Z INFO RunnerServer] EstablishVssConnection
+[2026-11-09 06:50:16Z INFO RunnerServer] Establish connection with 100 seconds timeout.
+[2026-11-09 06:50:16Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-11-09 06:50:16Z INFO RunnerServer] EstablishVssConnection
+[2026-11-09 06:50:16Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-11-09 06:50:16Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-11-09 06:50:16Z INFO RunnerServer] EstablishVssConnection
+[2026-11-09 06:50:16Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-11-09 06:50:16Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-11-09 06:50:17Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-11-09 06:50:17Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-11-09 06:50:17Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-11-09 06:50:18Z INFO BrokerMessageListener] VssConnection created
+[2026-11-09 06:50:18Z INFO Terminal] WRITE LINE: 
+[2026-11-09 06:50:18Z INFO Terminal] WRITE LINE: 
+[2026-11-09 06:50:18Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\.credentials_rsaparams
+[2026-11-09 06:50:18Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\.credentials_rsaparams
+[2026-11-09 06:50:19Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2026-11-09 06:50:21Z ERR  GitHubActionsService] POST request to https://broker.actions.githubusercontent.com/session failed. HTTP Status: Conflict
+[2026-11-09 06:50:21Z ERR  BrokerMessageListener] Catch exception during create session.
+[2026-11-09 06:50:21Z ERR  BrokerMessageListener] GitHub.DistributedTask.WebApi.TaskAgentSessionConflictException: Error: Conflict
+   at GitHub.Actions.RunService.WebApi.BrokerHttpClient.CreateSessionAsync(TaskAgentSession session, CancellationToken cancellationToken)
+   at GitHub.Runner.Common.BrokerServer.CreateSessionAsync(TaskAgentSession session, CancellationToken cancellationToken)
+   at GitHub.Runner.Listener.BrokerMessageListener.CreateSessionAsync(CancellationToken token)
+[2026-11-09 06:50:21Z INFO BrokerMessageListener] The session for this runner already exists.
+[2026-11-09 06:50:21Z ERR  Terminal] WRITE ERROR: A session for this runner already exists.
+[2026-11-09 06:50:21Z INFO BrokerMessageListener] The session conflict exception haven't reached retry limit.
+[2026-11-09 06:50:21Z INFO BrokerMessageListener] Sleeping for 30 seconds before retrying.
+[2026-11-09 06:50:51Z INFO BrokerMessageListener] Attempt to create session.
+[2026-11-09 06:50:51Z INFO BrokerMessageListener] Connecting to the Broker Server...
+[2026-11-09 06:50:51Z INFO ConfigurationStore] HasCredentials()
+[2026-11-09 06:50:51Z INFO ConfigurationStore] stored True
+[2026-11-09 06:50:51Z INFO CredentialManager] GetCredentialProvider
+[2026-11-09 06:50:51Z INFO CredentialManager] Creating type OAuth
+[2026-11-09 06:50:51Z INFO CredentialManager] Creating credential type: OAuth
+[2026-11-09 06:50:51Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\.credentials_rsaparams
+[2026-11-09 06:50:51Z INFO BrokerMessageListener] VssConnection created
+[2026-11-09 06:50:51Z INFO BrokerMessageListener] Connecting to the Runner server...
+[2026-11-09 06:50:51Z INFO RunnerServer] EstablishVssConnection
+[2026-11-09 06:50:51Z INFO RunnerServer] Establish connection with 100 seconds timeout.
+[2026-11-09 06:50:51Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-11-09 06:50:51Z INFO RunnerServer] EstablishVssConnection
+[2026-11-09 06:50:51Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-11-09 06:50:51Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-11-09 06:50:51Z INFO RunnerServer] EstablishVssConnection
+[2026-11-09 06:50:51Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-11-09 06:50:51Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-11-09 06:50:52Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-11-09 06:50:52Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-11-09 06:50:52Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-11-09 06:50:52Z INFO BrokerMessageListener] VssConnection created
+[2026-11-09 06:50:52Z INFO Terminal] WRITE LINE: 
+[2026-11-09 06:50:52Z INFO Terminal] WRITE LINE: 
+[2026-11-09 06:50:52Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\.credentials_rsaparams
+[2026-11-09 06:50:52Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\API\OrderManagementSystem\ERPSystem\MedicalShop\actions-runner\actions-runner-win-x64-2.338.2\.credentials_rsaparams
+[2026-11-09 06:50:54Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2026-11-09 06:50:55Z ERR  GitHubActionsService] POST request to https://broker.actions.githubusercontent.com/session failed. HTTP Status: Conflict
+[2026-11-09 06:50:55Z ERR  BrokerMessageListener] Catch exception during create session.
+[2026-11-09 06:50:55Z ERR  BrokerMessageListener] GitHub.DistributedTask.WebApi.TaskAgentSessionConflictException: Error: Conflict
+   at GitHub.Actions.RunService.WebApi.BrokerHttpClient.CreateSessionAsync(TaskAgentSession session, CancellationToken cancellationToken)
+   at GitHub.Runner.Common.BrokerServer.CreateSessionAsync(TaskAgentSession session, CancellationToken cancellationToken)
+   at GitHub.Runner.Listener.BrokerMessageListener.CreateSessionAsync(CancellationToken token)
+[2026-11-09 06:50:55Z INFO BrokerMessageListener] The session for this runner already exists.
+[2026-11-09 06:50:55Z ERR  Terminal] WRITE ERROR: A session for this runner already exists.
+[2026-11-09 06:50:55Z INFO BrokerMessageListener] The session conflict exception have reached retry limit.
+[2026-11-09 06:50:55Z ERR  Terminal] WRITE ERROR: Stop retry on SessionConflictException after retried for 240 seconds.
+[2026-11-09 06:50:55Z ERR  Terminal] WRITE ERROR: Failed to create session. Error: Conflict
+[2026-11-09 06:50:55Z INFO Listener] Runner execution has finished with return code 5
