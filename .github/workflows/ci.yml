@@ -51,29 +51,29 @@ jobs:
           name: MedicalShop-Build
           path: ${{ runner.temp }}\MedicalShop-Build
 
-     - name: Deploy to IIS
-      shell: powershell
+      - name: Deploy to IIS
+        shell: powershell
         run: |
-            Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
+          Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
 
-            $source = Join-Path $env:RUNNER_TEMP "MedicalShop-Build"
-            $destination = "C:\inetpub\MedicalShop"
-             $offline = Join-Path $destination "app_offline.htm"
+          $source = Join-Path $env:RUNNER_TEMP "MedicalShop-Build"
+          $destination = "C:\inetpub\MedicalShop"
+          $offline = Join-Path $destination "app_offline.htm"
 
-             New-Item -ItemType File -Path $offline -Force | Out-Null
+          New-Item -ItemType File -Path $offline -Force | Out-Null
 
-             try {
-           robocopy $source $destination /E /R:3 /W:5 /XF appsettings.json appsettings.*.json
+          try {
+              robocopy $source $destination /E /R:3 /W:5 /XF appsettings.json appsettings.*.json
 
-           $copyExitCode = $LASTEXITCODE
+              $copyExitCode = $LASTEXITCODE
 
-           if ($copyExitCode -ge 8) {
-             throw "Deployment failed. Robocopy exit code: $copyExitCode"
-                }
-             }
-            finally {
-        Remove-Item $offline -Force -ErrorAction SilentlyContinue
-         }
+              if ($copyExitCode -ge 8) {
+                  throw "Deployment failed. Robocopy exit code: $copyExitCode"
+              }
+          }
+          finally {
+              Remove-Item $offline -Force -ErrorAction SilentlyContinue
+          }
 
-        $global:LASTEXITCODE = 0
-        Write-Host "MedicalShop deployment completed."
+          $global:LASTEXITCODE = 0
+          Write-Host "MedicalShop deployment completed."
