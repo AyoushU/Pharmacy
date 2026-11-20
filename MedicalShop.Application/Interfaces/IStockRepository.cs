@@ -19,5 +19,12 @@ namespace MedicalShop.Application.Interfaces
         Task<int> GetLowStockCountAsync();
 
         Task<int> GetNearExpiryCountAsync(int days);
+
+        Task<Stock?> GetByIdForReturnAsync(int stockId);
+
+        Task<Stock?> GetByProductBatchAndExpiryAsync(
+    int productId,
+    string? batchNumber,
+    DateTime? expiryDate);
     }
 }

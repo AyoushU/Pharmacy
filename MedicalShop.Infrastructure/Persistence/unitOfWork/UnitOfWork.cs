@@ -1,6 +1,8 @@
 ﻿using MedicalShop.Application.Interfaces;
 using MedicalShop.Infrastructure.Persistence.Context;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
+using System.Data;
 
 namespace MedicalShop.Infrastructure.Persistence.unitOfWork
 {
@@ -15,9 +17,15 @@ namespace MedicalShop.Infrastructure.Persistence.unitOfWork
             _context = context;
         }
 
+        //public async Task BeginTransactionAsync()
+        //{
+        //    _transaction = await _context.Database.BeginTransactionAsync();
+        //}
         public async Task BeginTransactionAsync()
         {
-            _transaction = await _context.Database.BeginTransactionAsync();
+            _transaction = await _context.Database
+                .BeginTransactionAsync(
+                    System.Data.IsolationLevel.ReadCommitted);
         }
 
         public async Task SaveChangesAsync()
@@ -35,6 +43,15 @@ namespace MedicalShop.Infrastructure.Persistence.unitOfWork
             }
         }
 
+        //public async Task RollbackTransactionAsync()
+        //{
+        //    if (_transaction != null)
+        //    {
+        //        await _transaction.RollbackAsync();
+        //        await _transaction.DisposeAsync();
+        //        _transaction = null;
+        //    }
+        //}
         public async Task RollbackTransactionAsync()
         {
             if (_transaction != null)

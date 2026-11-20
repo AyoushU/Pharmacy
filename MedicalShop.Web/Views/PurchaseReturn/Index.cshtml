@@ -1,0 +1,72 @@
+﻿
+@model List<MedicalShop.Application.DTOs.Purchases.PurchaseDto>
+
+@{
+    ViewData["Title"] = "Purchase Returns";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Purchase Returns</h2>
+</div>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["Success"]
+    </div>
+}
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">
+        No purchases found.
+    </div>
+}
+else
+{
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Purchase No.</th>
+                    <th>Supplier</th>
+                    <th>Purchase Date</th>
+                    <th>Invoice No.</th>
+                    <th>Net Amount</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var purchase in Model)
+                {
+                    <tr>
+                        <td>@purchase.PurchaseNumber</td>
+                        <td>@purchase.SupplierName</td>
+                        <td>@purchase.PurchaseDate.ToString("dd-MM-yyyy")</td>
+                        <td>@purchase.InvoiceNumber</td>
+                        <td>@purchase.NetAmount.ToString("N2")</td>
+                        <td>@purchase.Status</td>
+                        <td>
+                            @if (purchase.Status == "Completed")
+                            {
+                                <a asp-action="Create"
+                                   asp-route-purchaseId="@purchase.PurchaseId"
+                                   class="btn btn-sm btn-warning">
+                                    Return
+                                </a>
+                            }
+                            else
+                            {
+                                <button class="btn btn-sm btn-secondary" disabled>
+                                    Return
+                                </button>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

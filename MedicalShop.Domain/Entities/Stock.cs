@@ -27,6 +27,7 @@ namespace MedicalShop.Domain.Entities
 
         // Navigation property
         public Product Product { get; private set; } = null!;
+        public byte[] RowVersion { get; private set; } = null!; //Ye SQL Server ko detect karne mein help karega ki kisi doosre user ne same stock record modify kiya hai ya nahi.
 
         private Stock()
         {
