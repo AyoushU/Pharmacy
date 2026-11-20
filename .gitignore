@@ -2,7 +2,7 @@
 bin/
 obj/
 node_modules/
-dist/
+/dist/
 .angular/
 *.user
 *.suo
