@@ -42,6 +42,8 @@ namespace MedicalShop.Infrastructure.Persistence.Configurations
                 x.ProductId,
                 x.BatchNumber
             });
+            builder.Property(x => x.RowVersion)
+                   .IsRowVersion();
         }
     }
 }

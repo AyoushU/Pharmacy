@@ -9,7 +9,7 @@ namespace MedicalShop.Web.Controllers
     {
         private readonly ICategoryService _categoryService;
 
-        // create constructor 
+        // create constructor comment
         public CategoryController(ICategoryService categoryService)
         {
             _categoryService = categoryService;

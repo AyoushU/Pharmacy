@@ -76,5 +76,25 @@ namespace MedicalShop.Infrastructure.Persistence.Repositories
                     s.ExpiryDate.Value >= today &&
                     s.ExpiryDate.Value <= expiryLimit);
         }
+
+        // new code for purchase return
+
+        public async Task<Stock?> GetByIdForReturnAsync(int stockId)
+        {
+            return await _context.Stocks
+                .Include(s => s.Product)
+                .FirstOrDefaultAsync(s => s.StockId == stockId);
+        }
+        // End
+
+        public async Task<Stock?> GetByProductBatchAndExpiryAsync(int productId,string? batchNumber,DateTime? expiryDate)
+        {
+            return await _context.Stocks
+                .Include(s => s.Product)
+                .FirstOrDefaultAsync(s =>
+                    s.ProductId == productId &&
+                    s.BatchNumber == batchNumber &&
+                    s.ExpiryDate == expiryDate);
+        }
     }
 }

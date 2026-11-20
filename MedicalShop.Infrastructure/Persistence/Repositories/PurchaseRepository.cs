@@ -45,6 +45,17 @@ namespace MedicalShop.Infrastructure.Persistence.Repositories
                 .AnyAsync(x => x.PurchaseNumber == purchaseNumber);
         }
 
-        
+        // new code for purchase return
+
+        public async Task<Purchase?> GetByIdForReturnAsync(int id)
+        {
+            return await _context.Purchases
+                .Include(x => x.Supplier)
+                .Include(x => x.PurchaseDetails)
+                    .ThenInclude(x => x.Product)
+                .FirstOrDefaultAsync(x => x.PurchaseId == id);
+        }
+        // End
+
     }
 }

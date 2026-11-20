@@ -108,7 +108,7 @@ namespace MedicalShop.Application.Services
                 0,
                 0,
                 0,
-                "Draft");
+                "Completed");
 
             foreach (var detail in dto.Details)
             {
@@ -163,7 +163,7 @@ namespace MedicalShop.Application.Services
                 totalAmount,
                 gstAmount,
                 netAmount,
-                "Draft");
+                "Completed");
 
             await _unitOfWork.BeginTransactionAsync();
 

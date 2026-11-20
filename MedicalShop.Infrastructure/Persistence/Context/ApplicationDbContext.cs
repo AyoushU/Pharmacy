@@ -28,11 +28,16 @@ namespace MedicalShop.Infrastructure.Persistence.Context
         public DbSet<Sale> Sales => Set<Sale>();
 
         public DbSet<SaleDetail> SaleDetails => Set<SaleDetail>();
+        public DbSet<PurchaseReturn> PurchaseReturns { get; set; }
 
-        protected override void OnModelCreating(
-            ModelBuilder modelBuilder)
+        public DbSet<PurchaseReturnDetail> PurchaseReturnDetails { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.HasSequence<int>("PurchaseReturnNumberSequence")
+             .StartsAt(1)
+             .IncrementsBy(1);
 
             modelBuilder.ApplyConfigurationsFromAssembly(
                 typeof(ApplicationDbContext).Assembly);

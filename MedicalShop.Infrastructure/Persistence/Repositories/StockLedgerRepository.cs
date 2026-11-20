@@ -7,10 +7,7 @@ using MedicalShop.Infrastructure.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 
 namespace MedicalShop.Infrastructure.Persistence.Repositories
-{
-   
-   
-
+{ 
     public class StockLedgerRepository : IStockLedgerRepository
     {
         private readonly ApplicationDbContext _context;
@@ -35,7 +32,6 @@ namespace MedicalShop.Infrastructure.Persistence.Repositories
         {
             await _context.StockLedgers.AddAsync(stockLedger);
         }
-
        
     }
 }

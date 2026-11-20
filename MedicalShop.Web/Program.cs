@@ -34,6 +34,8 @@ builder.Services.AddScoped<IStockLedgerRepository, StockLedgerRepository>();
 builder.Services.AddScoped<ISaleRepository, SaleRepository>();
 builder.Services.AddScoped<ISaleService, SaleService>();
 builder.Services.AddScoped<IDashboardService, DashboardService>();
+builder.Services.AddScoped<IPurchaseReturnRepository, PurchaseReturnRepository>(); //new code for purchase return
+builder.Services.AddScoped<IPurchaseReturnService, PurchaseReturnService>(); // new code
 
 
 // Add services to the container.

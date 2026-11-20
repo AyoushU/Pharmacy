@@ -13,6 +13,8 @@ namespace MedicalShop.Application.Interfaces
 
         Task<bool> PurchaseNumberExistsAsync(string purchaseNumber);
 
-        
+        Task<Purchase?> GetByIdForReturnAsync(int id);
+
+
     }
 }

@@ -22,6 +22,8 @@ namespace MedicalShop.Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.HasSequence<int>("PurchaseReturnNumberSequence");
+
             modelBuilder.Entity("MedicalShop.Domain.Entities.Category", b =>
                 {
                     b.Property<int>("CategoryId")
@@ -283,6 +285,108 @@ namespace MedicalShop.Infrastructure.Migrations
                     b.ToTable("PurchaseDetails", (string)null);
                 });
 
+            modelBuilder.Entity("MedicalShop.Domain.Entities.PurchaseReturn", b =>
+                {
+                    b.Property<int>("PurchaseReturnId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PurchaseReturnId"));
+
+                    b.Property<decimal>("GSTAmount")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("NetAmount")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("PurchaseId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Reason")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<DateTime>("ReturnDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ReturnNumber")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.Property<decimal>("TotalAmount")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("PurchaseReturnId");
+
+                    b.HasIndex("PurchaseId");
+
+                    b.HasIndex("ReturnNumber")
+                        .IsUnique();
+
+                    b.ToTable("PurchaseReturns", (string)null);
+                });
+
+            modelBuilder.Entity("MedicalShop.Domain.Entities.PurchaseReturnDetail", b =>
+                {
+                    b.Property<int>("PurchaseReturnDetailId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PurchaseReturnDetailId"));
+
+                    b.Property<decimal>("GSTAmount")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("GSTPercentage")
+                        .HasPrecision(5, 2)
+                        .HasColumnType("decimal(5,2)");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PurchaseDetailId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("PurchasePrice")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("PurchaseReturnId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StockId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("TotalAmount")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("PurchaseReturnDetailId");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("PurchaseDetailId");
+
+                    b.HasIndex("PurchaseReturnId");
+
+                    b.HasIndex("StockId");
+
+                    b.ToTable("PurchaseReturnDetails", (string)null);
+                });
+
             modelBuilder.Entity("MedicalShop.Domain.Entities.Sale", b =>
                 {
                     b.Property<int>("SaleId")
@@ -435,6 +539,12 @@ namespace MedicalShop.Infrastructure.Migrations
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion");
 
                     b.Property<decimal>("SellingPrice")
                         .HasPrecision(18, 2)
@@ -596,6 +706,52 @@ namespace MedicalShop.Infrastructure.Migrations
                     b.Navigation("Purchase");
                 });
 
+            modelBuilder.Entity("MedicalShop.Domain.Entities.PurchaseReturn", b =>
+                {
+                    b.HasOne("MedicalShop.Domain.Entities.Purchase", "Purchase")
+                        .WithMany()
+                        .HasForeignKey("PurchaseId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Purchase");
+                });
+
+            modelBuilder.Entity("MedicalShop.Domain.Entities.PurchaseReturnDetail", b =>
+                {
+                    b.HasOne("MedicalShop.Domain.Entities.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("MedicalShop.Domain.Entities.PurchaseDetail", "PurchaseDetail")
+                        .WithMany()
+                        .HasForeignKey("PurchaseDetailId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("MedicalShop.Domain.Entities.PurchaseReturn", "PurchaseReturn")
+                        .WithMany("PurchaseReturnDetails")
+                        .HasForeignKey("PurchaseReturnId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MedicalShop.Domain.Entities.Stock", "Stock")
+                        .WithMany()
+                        .HasForeignKey("StockId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+
+                    b.Navigation("PurchaseDetail");
+
+                    b.Navigation("PurchaseReturn");
+
+                    b.Navigation("Stock");
+                });
+
             modelBuilder.Entity("MedicalShop.Domain.Entities.Sale", b =>
                 {
                     b.HasOne("MedicalShop.Domain.Entities.Customer", "Customer")
@@ -670,6 +826,11 @@ namespace MedicalShop.Infrastructure.Migrations
             modelBuilder.Entity("MedicalShop.Domain.Entities.Purchase", b =>
                 {
                     b.Navigation("PurchaseDetails");
+                });
+
+            modelBuilder.Entity("MedicalShop.Domain.Entities.PurchaseReturn", b =>
+                {
+                    b.Navigation("PurchaseReturnDetails");
                 });
 
             modelBuilder.Entity("MedicalShop.Domain.Entities.Sale", b =>
