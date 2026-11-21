@@ -2,9 +2,6 @@
 using MedicalShop.Domain.Entities;
 using MedicalShop.Infrastructure.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace MedicalShop.Infrastructure.Persistence.Repositories
 {

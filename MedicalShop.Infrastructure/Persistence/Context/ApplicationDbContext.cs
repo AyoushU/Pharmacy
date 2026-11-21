@@ -1,16 +1,11 @@
 ﻿using MedicalShop.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace MedicalShop.Infrastructure.Persistence.Context
 {
     public class ApplicationDbContext : DbContext
     {
-        public ApplicationDbContext(
-            DbContextOptions<ApplicationDbContext> options)
-            : base(options)
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options): base(options)
         {
         }
 
@@ -32,10 +27,18 @@ namespace MedicalShop.Infrastructure.Persistence.Context
 
         public DbSet<PurchaseReturnDetail> PurchaseReturnDetails { get; set; }
 
+        public DbSet<SaleReturn> SaleReturns { get; set; }
+
+        public DbSet<SaleReturnDetail> SaleReturnDetails { get; set; }
+        public DbSet<SaleReturnRefund> SaleReturnRefunds { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.HasSequence<int>("PurchaseReturnNumberSequence")
+             .StartsAt(1)
+             .IncrementsBy(1);
+            modelBuilder.HasSequence<int>("SaleReturnNumberSequence")
              .StartsAt(1)
              .IncrementsBy(1);
 

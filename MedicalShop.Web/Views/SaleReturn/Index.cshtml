@@ -1,0 +1,142 @@
+﻿@model List<MedicalShop.Application.DTOs.SaleReturn.SaleReturnListDto>
+
+@{
+    ViewData["Title"] = "Sale Returns";
+}
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Sale Returns</h2>
+</div>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["Success"]
+    </div>
+}
+
+<form asp-controller="SaleReturn" asp-action="Index" method="get">
+    <div class="row align-items-end">
+        <div class="col-md-4">
+            <label class="form-label">Search Invoice / Customer</label>
+            <input type="text"
+                   name="search"
+                   value="@Context.Request.Query["search"]"
+                   class="form-control"
+                   placeholder="Enter invoice number or customer name" />
+        </div>
+
+        <div class="col-md-2">
+            <button type="submit" class="btn btn-primary w-100">
+                Search
+            </button>
+        </div>
+
+        <div class="col-md-2">
+            <a asp-controller="SaleReturn"
+               asp-action="Index"
+               class="btn btn-secondary w-100">
+                Clear
+            </a>
+        </div>
+    </div>
+</form>
+
+<div class="card mt-3">
+    <div class="card-header">
+        <h5 class="mb-0">Sales List</h5>
+    </div>
+
+    <div class="card-body">
+        <table class="table table-bordered table-hover">
+            <thead class="table-light">
+                <tr>
+                    <th>SaleId.</th>
+                    <th>Invoice No.</th>
+                    <th>Customer</th>
+                    <th>Sale Date</th>
+                    <th>Net Amount</th>
+                    <th>Payment Status</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @if (Model != null && Model.Any())
+                {
+                    foreach (var sale in Model)
+                    {
+                        <tr>
+                            <td>@sale.SaleId</td>
+                            <td>@sale.InvoiceNumber</td>
+                            <td>@sale.CustomerName</td>
+                            <td>@sale.SaleDate.ToString("dd-MMM-yyyy")</td>
+                            <td>@sale.NetAmount.ToString("N2")</td>
+                            <td>@sale.PaymentStatus</td>
+                            <td>@sale.Status</td>
+                            <td>
+                                <a asp-controller="SaleReturn"
+                                   asp-action="GetSaleForReturn"
+                                   asp-route-saleId="@sale.SaleId"
+                                   class="btn btn-sm btn-primary">
+                                    Return
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="7" class="text-center">
+                            No sales found.
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<div id="saleDetails" class="mt-3"></div>
+<script>
+    document.getElementById("searchSaleBtn").addEventListener("click", async function () {
+
+        const saleId = document.getElementById("saleId").value;
+        const saleDetails = document.getElementById("saleDetails");
+
+        if (!saleId || saleId <= 0) {
+            alert("Please enter a valid Sale ID.");
+            return;
+        }
+
+        saleDetails.innerHTML = "Loading...";
+
+        try {
+            const url = '@Url.Action("GetSaleForReturn", "SaleReturn")'
+                + '?saleId=' + encodeURIComponent(saleId);
+
+            const response = await fetch(url);
+
+            if (!response.ok) {
+                throw new Error(await response.text());
+            }
+
+            const data = await response.json();
+
+            console.log(data);
+
+            saleDetails.innerHTML = `
+                <div class="alert alert-success">
+                    Invoice Found: ${data.invoiceNumber}
+                </div>
+            `;
+        }
+        catch (error) {
+            saleDetails.innerHTML = `
+                <div class="alert alert-danger">
+                    ${error.message}
+                </div>
+            `;
+        }
+    });
+</script>

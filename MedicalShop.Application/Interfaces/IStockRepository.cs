@@ -22,9 +22,8 @@ namespace MedicalShop.Application.Interfaces
 
         Task<Stock?> GetByIdForReturnAsync(int stockId);
 
-        Task<Stock?> GetByProductBatchAndExpiryAsync(
-    int productId,
-    string? batchNumber,
-    DateTime? expiryDate);
+        Task<Stock?> GetByProductBatchAndExpiryAsync(int productId,string? batchNumber,DateTime? expiryDate);
+
+        Task<List<Stock>> GetAllStockList();
     }
 }
