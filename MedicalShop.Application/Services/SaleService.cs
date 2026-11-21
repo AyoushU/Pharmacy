@@ -4,8 +4,7 @@ using MedicalShop.Domain.Entities;
 
 namespace MedicalShop.Application.Services
 {
-
-    public class SaleService : ISaleService
+ public class SaleService : ISaleService
     {
         private readonly ISaleRepository _saleRepository;
         private readonly IStockRepository _stockRepository;

@@ -96,5 +96,12 @@ namespace MedicalShop.Infrastructure.Persistence.Repositories
                     s.BatchNumber == batchNumber &&
                     s.ExpiryDate == expiryDate);
         }
+
+        public async Task<List<Stock>> GetAllStockList()
+        {
+            return await _context.Stocks
+                 .Include(s => s.Product)
+                 .ToListAsync();
+        }
     }
 }

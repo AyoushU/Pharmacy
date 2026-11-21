@@ -1,0 +1,56 @@
+﻿@model List<MedicalShop.Application.DTOs.Stock.StockDto>
+
+@{
+    ViewData["Title"] = "Stock";
+}
+
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>StockId</th>
+            <th>ProductId</th>
+            <th>Product</th>
+            <th>BatchNumber</th>
+            <th>ExpiryDate</th>
+            <th>Quantity</th>
+            <th>PurchasePrice</th>
+            <th>SellingPrice</th>
+            <th>CreatedDate</th>
+            <th>ModifiedDate</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @if (Model.Any())
+        {
+            foreach (var customer in Model)
+            {
+                <tr>
+                    <td>@customer.StockId</td>
+                    <td>@customer.ProductId</td>
+                    <td>@customer.ProductName</td>
+                    <td>@customer.BatchNumber</td>
+                    <td>@customer.ExpiryDate</td>
+                    <td>@customer.Quantity</td>
+                    <td>@customer.PurchasePrice</td>
+                    <td>@customer.SellingPrice</td>
+                    <td>@customer.CreatedDate</td>
+                    <td>@customer.ModifiedDate</td>
+                    
+                   
+                    
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="7" class="text-center">
+                    No customers found.
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
