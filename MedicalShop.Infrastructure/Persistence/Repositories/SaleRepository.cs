@@ -55,5 +55,17 @@ namespace MedicalShop.Infrastructure.Persistence.Repositories
             return await _applicationDbContext.Sales
                 .AnyAsync(s => s.InvoiceNumber == invoiceNumber);
         }
+
+        // new code for purchase return
+
+        public async Task<Sale?> GetByIdForReturnAsync(int id)
+        {
+            return await _applicationDbContext.Sales
+                .Include(x => x.Customer)
+                .Include(x => x.SaleDetails)
+                    .ThenInclude(x => x.Product)
+                .FirstOrDefaultAsync(x => x.SaleId == id);
+        }
+        // End
     }
 }

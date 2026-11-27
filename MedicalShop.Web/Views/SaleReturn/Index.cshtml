@@ -74,13 +74,29 @@
                             <td>@sale.NetAmount.ToString("N2")</td>
                             <td>@sale.PaymentStatus</td>
                             <td>@sale.Status</td>
-                            <td>
+                           @*  <td>
                                 <a asp-controller="SaleReturn"
                                    asp-action="GetSaleForReturn"
                                    asp-route-saleId="@sale.SaleId"
                                    class="btn btn-sm btn-primary">
                                     Return
                                 </a>
+                            </td> *@
+                            <td>
+                                @if (sale.Status == "Completed")
+                                {
+                                    <a asp-action="Create"
+                                       asp-route-saleId="@sale.SaleId"
+                                       class="btn btn-sm btn-warning">
+                                        Returns
+                                    </a>
+                                }
+                                else
+                                {
+                                    <button class="btn btn-sm btn-secondary" disabled>
+                                        Returns
+                                    </button>
+                                }
                             </td>
                         </tr>
                     }

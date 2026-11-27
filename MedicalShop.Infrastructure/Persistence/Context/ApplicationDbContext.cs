@@ -1,9 +1,11 @@
 ﻿using MedicalShop.Domain.Entities;
+using MedicalShop.Infrastructure.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace MedicalShop.Infrastructure.Persistence.Context
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options): base(options)
         {
@@ -31,9 +33,11 @@ namespace MedicalShop.Infrastructure.Persistence.Context
 
         public DbSet<SaleReturnDetail> SaleReturnDetails { get; set; }
         public DbSet<SaleReturnRefund> SaleReturnRefunds { get; set; }
+        public DbSet<CustomerPayment> CustomerPayments { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+          
             base.OnModelCreating(modelBuilder);
             modelBuilder.HasSequence<int>("PurchaseReturnNumberSequence")
              .StartsAt(1)

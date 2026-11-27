@@ -1,4 +1,4 @@
-﻿using MedicalShop.Application.DTOs.CreateSale;
+﻿using MedicalShop.Application.DTOs.Sale;
 using MedicalShop.Domain.Entities;
 
 namespace MedicalShop.Application.Interfaces
@@ -11,7 +11,7 @@ namespace MedicalShop.Application.Interfaces
         //Task<int> CreateSaleAsync(Sale sale);
         Task<int> CreateSaleAsync(CreateSaleDto dto);
 
-        Task<List<Sale>> GetAllSalesAsync();
+        Task<List<SaleDto>> GetAllSalesAsync();
 
         Task<Sale?> GetSaleByIdAsync(int id);
     }

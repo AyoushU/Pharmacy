@@ -1,5 +1,4 @@
-﻿@using MedicalShop.Domain.Entities
-@model List<Sale>
+﻿@model List<MedicalShop.Application.DTOs.Sale.SaleDto>
 
 @{
     ViewData["Title"] = "Sales";
@@ -43,6 +42,7 @@
                 <table class="table table-bordered table-hover align-middle">
                     <thead class="table-light">
                         <tr>
+                           <th hidden="hidden">SaleId</th>
                             <th>Invoice Number</th>
                             <th>Sale Date</th>
                             <th>Customer</th>
@@ -58,12 +58,11 @@
                             foreach (var sale in Model)
                             {
                                 <tr>
+                                    <td hidden="hidden">@sale.SaleId</td>
                                     <td>@sale.InvoiceNumber</td>
                                     <td>@sale.SaleDate.ToString("dd-MMM-yyyy HH:mm")</td>
                                     <td>
-                                        @(sale.Customer == null
-                                            ? "Walk-in Customer"
-                                            : sale.Customer.ToString())
+                                        @sale.CustomerName
                                     </td>
                                     <td>@sale.PaymentMethod</td>
                                     <td>@sale.NetAmount.ToString("N2")</td>

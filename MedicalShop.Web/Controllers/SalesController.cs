@@ -1,21 +1,26 @@
-﻿using MedicalShop.Application.DTOs.CreateSale;
+﻿using MedicalShop.Application.DTOs.Sale;
 using MedicalShop.Application.Interfaces;
 using MedicalShop.Web.ViewModels.Sales;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace MedicalShop.Web.Controllers
 {
+    [Authorize]
     public class SalesController : Controller
     {
         private readonly ISaleService _saleService;
         private readonly IStockRepository _stockRepository;
+        private readonly ICustomerService _customerService; 
 
-        public SalesController(ISaleService saleService, IStockRepository stockRepository)
+        public SalesController(ISaleService saleService, IStockRepository stockRepository, ICustomerService customerService)
         {
             _saleService = saleService;
             _stockRepository = stockRepository;
+            _customerService = customerService;
         }
-
+        
         public async Task<IActionResult> Index()
         {
             var sales = await _saleService.GetAllSalesAsync();
@@ -36,10 +41,9 @@ namespace MedicalShop.Web.Controllers
             return View(sale);
         }
 
-
         [HttpGet]
         public async Task<IActionResult> Create()
-        {
+        { 
             var stocks = await _stockRepository.GetAllAsync();
 
             var availableStocks = stocks
@@ -47,18 +51,32 @@ namespace MedicalShop.Web.Controllers
                             (!s.ExpiryDate.HasValue ||
                              s.ExpiryDate.Value.Date >= DateTime.Today))
                 .ToList();
-
+            
             ViewBag.Stocks = availableStocks;
 
-            return View(new CreateSaleViewModel());
+            var customers = await _customerService.GetAllAsync();
+            var model = new CreateSaleViewModel
+            {
+                Customers = customers.Select(c => new SelectListItem
+                {
+                    Value = c.CustomerId.ToString(),
+                    Text = c.CustomerName,
+                    Selected = c.CustomerName == "Cash"
+
+                }).ToList(),
+                CustomerId= customers.FirstOrDefault(c=> c.CustomerName=="Cash")?.CustomerId ?? 0
+            };
+
+            return View(model);
         }
 
-
+       
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(CreateSaleViewModel model)
         {
+           
             if (!ModelState.IsValid)
             {
                 var stocks = await _stockRepository.GetAllAsync();

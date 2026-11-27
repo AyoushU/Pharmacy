@@ -1,6 +1,8 @@
-﻿using MedicalShop.Application.DTOs.CreateSale;
+﻿using MedicalShop.Application.DTOs.Sale;
+using MedicalShop.Application.DTOs.Purchases;
 using MedicalShop.Application.Interfaces;
 using MedicalShop.Domain.Entities;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace MedicalShop.Application.Services
 {
@@ -187,9 +189,23 @@ namespace MedicalShop.Application.Services
 
 
 
-        public async Task<List<Sale>> GetAllSalesAsync()
+        public async Task<List<SaleDto>> GetAllSalesAsync()
         {
-            return await _saleRepository.GetAllAsync();
+           var sale= await _saleRepository.GetAllAsync();
+
+            return sale.Select(x => new SaleDto
+            {
+                SaleId=x.SaleId,
+                InvoiceNumber = x.InvoiceNumber,
+                SaleDate = x.SaleDate,
+                CustomerId = x.CustomerId,
+                CustomerName = x.Customer.CustomerName,
+                PaymentMethod= x.PaymentMethod,
+                NetAmount = x.NetAmount,
+                Status = x.Status
+
+
+            }).ToList();
         }
 
         public async Task<Sale?> GetSaleByIdAsync(int id)

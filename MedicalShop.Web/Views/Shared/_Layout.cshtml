@@ -28,6 +28,12 @@
     </head>
    
 </head>
+<form id="autoLogoutForm"
+      asp-controller="Account"
+      asp-action="Logout"
+      method="post"
+      class="d-none">
+</form>
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
@@ -78,6 +84,9 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Index">Product</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Customer" asp-action="Index">Customer</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Index">Category</a>
                         </li>
                          <li class="nav-item">
@@ -119,10 +128,47 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Supplier" asp-action="Index">Reports</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Supplier" asp-action="Index">Account</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-dark"
+                               href="#"
+                               id="acountDropdown"
+                               role="button"
+                               data-bs-toggle="dropdown"
+                               aria-expanded="false">
+                                Acount
+                            </a>
+
+                            <ul class="dropdown-menu" aria-labelledby="acountDropdown">
+
+                                <li>
+                                    <a class="dropdown-item"
+                                       asp-controller="CustomerPayment"
+                                       asp-action="Create">
+                                        Payment Receive
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown-item"
+                                       asp-controller="PurchaseReturn"
+                                       asp-action="Index">
+                                        Outstanding
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="nav-item ms-auto">
+                            <form asp-controller="Account"
+                                  asp-action="Logout"
+                                  method="post">
+                                <button type="submit" class="btn btn-outline-danger btn-sm">
+                                    <i class="bi bi-box-arrow-right"></i> Logout
+                                </button>
+                            </form>
                         </li>
                     </ul>
+
                 </div>
             </div>
         </nav>
@@ -139,6 +185,10 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+            window.keepAliveUrl = '@Url.Action("KeepAlive", "Account")';
+    </script>
+    <script src="~/js/inactivity-logout.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

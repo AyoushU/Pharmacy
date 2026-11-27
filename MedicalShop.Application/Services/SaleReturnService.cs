@@ -34,7 +34,7 @@ namespace MedicalShop.Application.Services
         public async Task<SaleReturnDto?> GetSaleForReturnAsync(int saleId)
         {
             // 1. Fetch original sale with its details
-            var sale = await _saleRepository.GetByIdAsync(saleId);
+            var sale = await _saleRepository.GetByIdForReturnAsync(saleId);
 
             if (sale == null)
                 return null;

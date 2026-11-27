@@ -1,5 +1,7 @@
-﻿using MedicalShop.Application.DTOs.SaleReturn;
+﻿using MedicalShop.Application.DTOs.PurchaseReturn;
+using MedicalShop.Application.DTOs.SaleReturn;
 using MedicalShop.Application.Interfaces;
+using MedicalShop.Application.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MedicalShop.Web.Controllers
@@ -42,6 +44,54 @@ namespace MedicalShop.Web.Controllers
                 return NotFound("Sale invoice not found.");
 
             return Ok(sale);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Create(int saleId)
+        {
+            var model = await _saleReturnService
+                .GetSaleForReturnAsync(saleId);
+
+            if (model == null)
+                return NotFound();
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(CreateSaleReturnDto dto)
+        {
+            // Ignore products for which return quantity is zero.
+            dto.Items = dto.Items
+                .Where(x => x.Quantity > 0)
+                .ToList();
+
+            if (!dto.Items.Any())
+            {
+                TempData["Error"] = "Please enter return quantity for at least one product.";
+
+                return RedirectToAction(
+                    "Create",
+                    new { saleId = dto.SaleId });
+            }
+
+            try
+            {
+                await _saleReturnService.CreateSaleReturnAsync(dto);
+
+                TempData["Success"] = "Sale return created successfully.";
+
+                return RedirectToAction(nameof(Index));
+            }
+            catch (InvalidOperationException ex)
+            {
+                TempData["Error"] = ex.Message;
+
+                return RedirectToAction(
+                    "Create",
+                    new { saleId = dto.SaleId });
+            }
         }
 
     }

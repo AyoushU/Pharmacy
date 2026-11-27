@@ -1,11 +1,12 @@
-﻿using System;
+﻿using MedicalShop.Domain.Common;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace MedicalShop.Domain.Entities
 {
 
-    public class Product
+    public class Product : BaseClass
     {
         public int ProductId { get; private set; }
 
@@ -34,8 +35,6 @@ namespace MedicalShop.Domain.Entities
         public string? Description { get; private set; }
 
         public bool IsActive { get; private set; }
-
-        public DateTime CreatedDate { get; private set; }
 
         public DateTime? ModifiedDate { get; private set; }
 
