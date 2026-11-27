@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System.ComponentModel.DataAnnotations;
 
 namespace MedicalShop.Web.ViewModels.Sales
 {
@@ -12,6 +13,7 @@ namespace MedicalShop.Web.ViewModels.Sales
         [Range(0, double.MaxValue)]
         public decimal DiscountAmount { get; set; }
         public decimal AmountReceived { get; set; }
+        public List<SelectListItem> Customers { get; set; }= new();
 
         public List<CreateSaleItemViewModel> Items { get; set; } = new();
     }

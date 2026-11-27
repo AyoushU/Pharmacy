@@ -39,8 +39,7 @@ namespace MedicalShop.Web.Controllers
             return View(model);
         }
 
-        private async Task LoadDropdownsAsync(
-            PurchaseCreateViewModel model)
+        private async Task LoadDropdownsAsync(PurchaseCreateViewModel model)
         {
             var suppliers = await _supplierService.GetAllAsync();
             var products = await _productService.GetAllAsync();

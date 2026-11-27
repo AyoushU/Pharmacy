@@ -1,5 +1,5 @@
 ﻿@using MedicalShop.Domain.Entities
-@using MedicalShop.Web.ViewModels.Sales
+@using MedicalShop.Web.ViewModels.Sales 
 @model CreateSaleViewModel
 
 @{
@@ -7,13 +7,12 @@
     var stocks = ViewBag.Stocks as List<Stock> ?? new List<Stock>();
 }
 
-<div class="container mt-4">
-    <div class="d-flex justify-content-between align-items-center mb-4">
+
         <h2>New Sale / Billing</h2>
         <a asp-action="Index" class="btn btn-outline-secondary">
             Back to Sales
         </a>
-    </div>
+   
 
     <form asp-action="Create" method="post">
         @Html.AntiForgeryToken()
@@ -22,9 +21,20 @@
              class="text-danger mb-3"></div>
 
         <div class="card shadow-sm mb-4">
-            <div class="card-header">Bill Details</div>
-            <div class="card-body">
-                <div class="row">
+        <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label asp-for="CustomerId" class="form-label"></label>
+
+                        <select asp-for="CustomerId"
+                                asp-items="Model.Customers"
+                                class="form-select">
+                            <option value="">-- Select Customer --</option>
+                        </select>
+
+                        <span asp-validation-for="CustomerId"
+                              class="text-danger"></span>
+                    </div>
+
                     <div class="col-md-6 mb-3">
                         <label class="form-label">Payment Method</label>
                         <select asp-for="PaymentMethod" class="form-select">
@@ -45,7 +55,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        
 
         <div class="card shadow-sm mb-4">
             <div class="card-header d-flex justify-content-between align-items-center">
@@ -180,7 +190,7 @@
             </button>
         </div>
     </form>
-</div>
+
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />

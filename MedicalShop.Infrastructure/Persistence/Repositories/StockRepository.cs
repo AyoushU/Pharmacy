@@ -56,12 +56,30 @@ namespace MedicalShop.Infrastructure.Persistence.Repositories
         public async Task<int> GetLowStockCountAsync()
         {
             return await _context.Products
-       .Where(p => _context.Stocks
-           .Where(s => s.ProductId == p.ProductId)
-           .Sum(s => (int?)s.Quantity) <= p.ReorderLevel)
-       .CountAsync();
+                         .Where(p => _context.Stocks
+                         .Where(s => s.ProductId == p.ProductId)
+                         .Sum(s => (int?)s.Quantity) <= p.ReorderLevel)
+                         .CountAsync();
+            //var query = _context.Products
+            //            .Where(p => _context.Stocks
+            //            .Where(s => s.ProductId == p.ProductId)
+            //            .Sum(s => (int?)s.Quantity) <= p.ReorderLevel);
+            //            var sql = query.ToQueryString();
 
-
+            //return await query.CountAsync();
+            //var stockGroups = _context.Stocks
+            //    .GroupBy(s => s.ProductId)
+            //    .Select(g => new
+            //    {
+            //        productId = g.Key,
+            //        TotalQuantity = g.Sum(s => s.Quantity)
+            //    });
+            //return await (from stock in stockGroups
+            //              join product in _context.Products
+            //              on stock.productId equals product.ProductId
+            //              where stock.TotalQuantity <= product.ReorderLevel
+            //              select product.ProductId
+            //            ).CountAsync();
         }
 
         public async Task<int> GetNearExpiryCountAsync(int days)

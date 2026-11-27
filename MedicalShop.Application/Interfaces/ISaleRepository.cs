@@ -12,5 +12,6 @@ namespace MedicalShop.Application.Interfaces
 
         Task AddAsync(Sale sale);
         Task<decimal> GetTodaySalesTotalAsync();
+        Task<Sale?> GetByIdForReturnAsync(int id);
     }
 }

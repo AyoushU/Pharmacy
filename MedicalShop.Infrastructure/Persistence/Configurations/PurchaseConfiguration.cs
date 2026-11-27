@@ -1,4 +1,4 @@
-﻿using global::MedicalShop.Domain.Entities;
+﻿using MedicalShop.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
