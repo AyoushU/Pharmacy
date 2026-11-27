@@ -17,17 +17,17 @@ var connectionString =
     ?? throw new InvalidOperationException(
         "DefaultConnection was not found.");
 // Azure Key Vault - Production Only
-if (builder.Environment.IsProduction())
-{
-    var keyVaultUri = builder.Configuration["KeyVault:VaultUri"];
+//if (builder.Environment.IsProduction())
+//{
+//    var keyVaultUri = builder.Configuration["KeyVault:VaultUri"];
 
-    if (!string.IsNullOrWhiteSpace(keyVaultUri))
-    {
-        builder.Configuration.AddAzureKeyVault(
-            new Uri(keyVaultUri),
-            new ManagedIdentityCredential());
-    }
-}
+//    if (!string.IsNullOrWhiteSpace(keyVaultUri))
+//    {
+//        builder.Configuration.AddAzureKeyVault(
+//            new Uri(keyVaultUri),
+//            new ManagedIdentityCredential());
+   // }
+
 // End
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -97,6 +97,14 @@ builder.Services.AddControllersWithViews(options =>
 });
 
 var app = builder.Build();
+var emailConfigured = !string.IsNullOrWhiteSpace(
+    app.Configuration["AdminUser:Email"]);
+
+var passwordConfigured = !string.IsNullOrWhiteSpace(
+    app.Configuration["AdminUser:Password"]);
+
+Console.WriteLine($"Admin Email Configured: {emailConfigured}");
+Console.WriteLine($"Admin Password Configured: {passwordConfigured}");
 await IdentitySeeder.SeedAsync(
     app.Services,
     app.Configuration);
